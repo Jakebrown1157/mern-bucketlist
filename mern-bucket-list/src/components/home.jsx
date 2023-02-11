@@ -1,4 +1,4 @@
-import Navbar from './navbar'
+import Navbar from './navbar.jsx'
 const React = require('react')
 
 function Home() {

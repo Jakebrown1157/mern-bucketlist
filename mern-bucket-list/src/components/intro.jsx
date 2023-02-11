@@ -1,4 +1,4 @@
-import Home from "./home"
+import { Link } from 'react-router-dom'
 
 function Intro() {
     return(
@@ -11,10 +11,11 @@ function Intro() {
             
 
             <div style={{Height: '100px', backgroundColor: 'red'}}>discription</div>
-            <a href='/home' style={{ display: 'flex', padding: 20, justifyContent: 'center', backgroundColor: 'grey'}}>
+
+            <Link to='/home' style={{ display: 'flex', padding: 20, justifyContent: 'center', backgroundColor: 'grey'}}>
                 <br></br>
                 <button className='btn-primary'>Enter if you dare!!</button>
-            </a>
+            </Link>
         </div>
     )
 }
