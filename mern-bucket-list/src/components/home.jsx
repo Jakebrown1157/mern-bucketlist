@@ -8,6 +8,13 @@ function Home() {
         <h1> Hey whats your bucket list? Alex Was here</h1>
       </main>
       <Navbar></Navbar>
+          <div style={{backgroundColor: 'lightgrey', width: '80vw', margin: 'auto'}}>
+            
+
+
+
+
+          </div>
       </div>
     )
 }
