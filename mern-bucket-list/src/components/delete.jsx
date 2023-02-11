@@ -1,9 +1,9 @@
 import Navbar from './navbar.jsx'
 
-export default function Create() {
+export default function Delete() {
     return(
         <div>
-             <h1> Welcome to the create page</h1>
+             <h1> Welcome to the delete page</h1>
         <Navbar></Navbar>
     </div>
     )
