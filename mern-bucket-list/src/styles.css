@@ -9,34 +9,49 @@ body {
 .nav {
     background-color: #333;
     color: white;
-    display: inline;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    height: 200px;
+}
+
+.nav img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
-    padding: 0 1rem;
-}
-
-
-
-.nav ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    display: flex;
-    gap: 1rem;
+    margin: 20px;
+    width: 150px;
+    height: 150px;
 }
 
 .nav a {
+    margin: 10px;
     text-decoration: none;
     color: inherit;
+    justify-content: center;
+    list-style: none;
+    display: flex;
+    height: 40px;
+    width: 40px;
 }
 
-.nav li.active {
+.nav div {
+    display: flex;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border: 0.5rem dashed red;
+    position: relative;
+    top: 30px;
+}
+
+.nav a.active {
     background-color: #555
 }
 
-.nav li:hover {
+.nav a:hover {
     background-color: #777
 }
 
