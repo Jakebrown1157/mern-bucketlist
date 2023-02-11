@@ -7,7 +7,7 @@ function Home() {
         <main style={{ display: 'flex', padding: 20, justifyContent: 'center' }}>
         <h1> Title </h1>
       </main>
-      <Navbar></Navbar>
+      <Navbar>SQL Addition 1144 20230211</Navbar>
       </div>
     )
 }
