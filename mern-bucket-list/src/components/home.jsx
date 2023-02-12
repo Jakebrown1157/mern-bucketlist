@@ -11,7 +11,7 @@ function Home() {
         <h1> Hey, Whats Your Bucket List?</h1>
       </main>
       <Navbar></Navbar>
-      <br> 65</br>
+      <br></br>
       <Table></Table>
       </div>
       
