@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom'
 import '../styles.css'
+import heybucket from '../assets/heybucket.png'
 
 
 function Intro() {
     return(
         <div >
-            <nav style={{display: 'flex',}}>
-                <img src='' alt=''></img>
-                <h1 style={{ display: 'flex', padding: 20, justifyContent: 'center', margin: 'auto',  color: 'white'}}> Hey, What's Your Bucket list?</h1>
-                <img src='' alt=''></img>
+            <nav style={{display: 'flex'}}>
+                <img src={heybucket} alt="Hey bucket logo" class="center" height={350} width={350}/>
+               
             </nav>
 
             <div style={{backgroundColor: 'lightgrey', width: '80vw', margin: 'auto'}}>
