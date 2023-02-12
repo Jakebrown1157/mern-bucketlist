@@ -5,7 +5,7 @@ import Create from './components/create.jsx';
 import Edit from './components/edit.jsx';
 import Delete from './components/delete.jsx';
 
-import './App.css';
+import './styles.css';
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
 
 function App() {

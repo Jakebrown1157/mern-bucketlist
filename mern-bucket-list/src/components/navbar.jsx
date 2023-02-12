@@ -5,38 +5,38 @@ export default function Navbar() {
     return(
         
         <nav className='nav' >
-            <img src='' alt=''></img>
+            <img src='../assets/heybucket.png' alt='Hey, Whats your Bucklist?'></img>
             <div className='buttons'>
 
                  {/* temporary link */}
                 <Link to='/'>
                     <br />
-                    <button className="btn-primary">Intro</button>
+                    <button type="button" class="btn btn-warning">Intro</button>
                 </Link>
 
                 <Link to='/Home'>
                     <br></br>
-                    <button className='btn-primary'>Home</button>
+                    <button type="button" class="btn btn-warning">Home</button>
                 </Link>
                 
                 <Link to='/Create'>
                     <br />
-                    <button className="btn-primary">Create</button>
+                    <button type="button" class="btn btn-warning">Create</button>
                 </Link>
 
                  {/* temporary link */}
                 <Link to='/Edit'>   
                     <br></br>
-                    <button className='btn-primary'>Edit</button>
+                    <button type="button" class="btn btn-warning">Edit</button>
                 </Link>
 
                  {/* temporary link */}
                 <Link to='/Delete'>
                     <br />
-                    <button className="btn-primary">Delete</button>
+                    <button type="button" class="btn btn-warning">Delete</button>
                 </Link>
             </div>
-            <img src='' alt=''></img>
+            <img src='./assets/dontkckbucket.png' alt='Dont Kick Bucket'></img>
         </nav>
         
     )
