@@ -1,3 +1,5 @@
+
+
 * {
     box-sizing: border-box;
 }
@@ -19,14 +21,14 @@ body {
     height: 200px;
 }
 
-.nav img {
+/* .nav img {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 20px;
     width: 150px;
     height: 150px;
-}
+} */
 
 .nav a {
     margin: 10px;
@@ -45,7 +47,7 @@ body {
     margin-right: 40px;
     padding-left: 50px;
     padding-right: 50px;
-    border: 0.5rem dashed red;
+    border: 0.5rem solid #004aad;
     position: relative;
     top: 30px;
 }
