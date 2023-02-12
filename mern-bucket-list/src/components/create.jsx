@@ -3,7 +3,9 @@ import Navbar from './navbar.jsx'
 export default function Create() {
     return(
         <div>
-             <h1> Welcome to the create page</h1>
+            <main style={{ display: 'flex', padding: 20, justifyContent: 'center', color: 'white' }}>
+             <h1>Create Bucket Page</h1>
+             </main>
         <Navbar></Navbar>
     </div>
     )

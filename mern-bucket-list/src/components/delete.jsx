@@ -3,7 +3,9 @@ import Navbar from './navbar.jsx'
 export default function Delete() {
     return(
         <div>
-             <h1> Welcome to the delete page</h1>
+            <main style={{ display: 'flex', padding: 20, justifyContent: 'center', color: 'white' }}>
+             <h1>Delete Bucket Page</h1>
+             </main>
         <Navbar></Navbar>
     </div>
     )
