@@ -1,5 +1,5 @@
 const buckets = require('express').Router()
-const db = require('../src')
+const db = require('../../src')
 const { Bucket } = db
 const { Op } = require('sequelize')
 const bucketModel = require('../models/bucketModel')
