@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class bucket extends Model {
+  class Bucket extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -13,15 +13,33 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  bucket.init({
-    bucket_id: DataTypes.INTEGER,
-    item: DataTypes.STRING,
-    difficulty: DataTypes.INTEGER,
-    author: DataTypes.STRING,
-    description: DataTypes.STRING
+  Bucket.init({
+    bucket_id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    item: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    difficulty: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    author: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
   }, {
     sequelize,
-    modelName: 'bucket',
+    modelName: 'Bucket',
+    tableName: 'buckets',
+    timestamps: false,
   });
-  return bucket;
+  return Bucket;
 };
