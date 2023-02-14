@@ -1,6 +1,7 @@
 import Navbar from './navbar.jsx'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import skull from '../assets/skull.png'
 
 
 export default function Create() {
@@ -20,16 +21,19 @@ export default function Create() {
                     <Form.Control type="description" placeholder="Description" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="Checkbox1">
-                    <Form.Label>1 skull</Form.Label>
-                    <Form.Check type="checkbox1" label="Checkbox 1" />
+                    <Form.Check type="checkbox1" label="1 Danger Skull"  />
+                    <img src={skull} alt="skull" height={25} width={25}/>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="Checkbox2">
-                    <Form.Label>2 skulls</Form.Label>
-                    <Form.Check type="checkbox2" label="Checkbox 2" />
+                    <Form.Check type="checkbox2" label="2 Danger Skulls" />
+                    <img src={skull} alt="skull" height={25} width={25}/>
+                    <img src={skull} alt="skull" height={25} width={25}/>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="Checkbox3">
-                    <Form.Label>3 skulls</Form.Label>
-                    <Form.Check type="checkbox3" label="Checkbox 3" />
+                    <Form.Check type="checkbox3" label="3 Danger Skulls" />
+                    <img src={skull} alt="skull" height={25} width={25}/>
+                    <img src={skull} alt="skull" height={25} width={25}/>
+                    <img src={skull} alt="skull" height={25} width={25}/>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="author">
                     <Form.Label>Author</Form.Label>

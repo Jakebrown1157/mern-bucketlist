@@ -29,7 +29,7 @@ module.exports = {
         name: 'visit a new Country',
         difficulty: 1,
         author: 'jake',
-        discription: 'visit anyware in the world youve never been'
+        discription: 'visit anywhere in the world youve never been'
 
       },
       {
