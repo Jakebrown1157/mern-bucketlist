@@ -13,14 +13,18 @@ function Intro() {
 
             <div style={{backgroundColor: 'lightgrey', width: '80vw', margin: 'auto'}}>
                 <p style={{width: '60vw', margin: 'auto', padding: '20px'}}>
-                    Are you just living or are you alive? Find out whats on people's bucket list and add some ideas of your own! 
+                My partner asked me if I'd ever seen "The Bucket List."
+
+                I said no, but I'd like to before I die.
+
+               Find out whats on people's bucket list and add some ideas of your own!  Are you just living or are you alive? 
 
                 </p>
             </div>
             <br></br>
             <Link to='/home' style={{ display: 'flex', padding: 20, justifyContent: 'center', backgroundColor: 'grey', width: '80vw', margin: 'auto'}}>
                 <br></br>
-                <button type="button" className="btn btn-secondary">Enter if you dare!!</button>
+                <button type="button" className="btn btn-danger">Enter if you dare!!</button>
             </Link>
         </div>
     )
