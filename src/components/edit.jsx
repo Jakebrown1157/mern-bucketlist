@@ -44,5 +44,3 @@ export default function Edit() {
     </div>
     )
 }
-
- {/* temporary link */}

@@ -43,5 +43,3 @@ export default function Create() {
 
     )
 }
-
-{/* temporary link */ }
