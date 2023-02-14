@@ -16,10 +16,10 @@ module.exports = (sequelize, DataTypes) => {
   Bucket.init({
     bucket_id: {
       type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true,
+      primarykey: true,
+      autoIncrement: true
     },
-    item: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false
     },
@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    description: {
+    discription: {
       type: DataTypes.STRING,
       allowNull: false
     }
@@ -39,7 +39,7 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Bucket',
     tableName: 'buckets',
-    timestamps: false,
+    timestamps: false
   });
   return Bucket;
 };

@@ -1,5 +1,4 @@
 //DEPENDENCIES 
-
 const express = require('express');
 const app = express();
 const { Sequelize } = require('sequelize');
@@ -15,10 +14,12 @@ app.use(express.urlencoded({ extended: false }))
 //controllers
 
 const bucketController = require('./controllers/bucketList_Controller')
-app.use('/app/books', booksController)
+app.use('/app/Buckets', bucketController)
 
 
 //LISTEN
 app.listen(4005, () => {
     console.log('Server is running on port 4005');
 })
+
+//command to run the server node server/server.js

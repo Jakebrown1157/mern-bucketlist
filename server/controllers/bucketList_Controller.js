@@ -17,7 +17,7 @@ buckets.get('/Home', async (req, res) => {
 })
 
 // get one bucket by id
-buckets.get('/:id', async (req, res) => {
+buckets.get('/Home/:id', async (req, res) => {
     try {
         console.log(req.query)
         const foundBucket = await Bucket.findOne({
@@ -46,7 +46,7 @@ buckets.post('/Create', async (req, res) => {
 })
 
 // UPDATE A bucket by id
-buckets.put('/:id', async (req, res) => {
+buckets.put('/Edit/:id', async (req, res) => {
     try {
         const updatedBucket = await Bucket.update(req.body, {
             where: { bucket_id: req.params.id }
@@ -61,7 +61,7 @@ buckets.put('/:id', async (req, res) => {
 })
 
 // DELETE A BAND BY ID
-buckets.delete('/:id', async (req, res) => {
+buckets.delete('/Delete/:id', async (req, res) => {
     try {
         const deletedBucket = await Bucket.destroy({
             where: { bucket_id: req.params.id }
