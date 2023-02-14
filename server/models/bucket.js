@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
     bucket_id: {
       type: DataTypes.INTEGER,
       primarykey: true,
-      autoIncrement: true
+      autoincrement: true
     },
     name: {
       type: DataTypes.STRING,
