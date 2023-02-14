@@ -7,7 +7,7 @@ function Intro() {
     return(
         <div >
             <nav style={{display: 'flex'}}>
-                <img src={heybucket} alt="Hey bucket logo" class="center" height={350} width={350}/>
+                <img src={heybucket} alt="Hey bucket logo" className="center" height={350} width={350}/>
                
             </nav>
 
@@ -20,7 +20,7 @@ function Intro() {
             <br></br>
             <Link to='/home' style={{ display: 'flex', padding: 20, justifyContent: 'center', backgroundColor: 'grey', width: '80vw', margin: 'auto'}}>
                 <br></br>
-                <button type="button" class="btn btn-secondary">Enter if you dare!!</button>
+                <button type="button" className="btn btn-secondary">Enter if you dare!!</button>
             </Link>
         </div>
     )

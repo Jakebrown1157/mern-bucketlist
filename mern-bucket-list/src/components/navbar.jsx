@@ -14,29 +14,29 @@ export default function Navbar() {
 
                 <Link to='/'>
                     <br />
-                    <button type="button" class="btn btn-warning">Intro</button>
+                    <button type="button" className="btn btn-warning">Intro</button>
                 </Link>
 
                 <Link to='/Home'>
                     <br></br>
-                    <button type="button" class="btn btn-primary">Home</button>
+                    <button type="button" className="btn btn-primary">Home</button>
                 </Link>
                 
                 <Link to='/Create'>
                     <br />
-                    <button type="button" class="btn btn-success">Create</button>
+                    <button type="button" className="btn btn-success">Create</button>
                 </Link>
 
                  {/* temporary link */}
                 <Link to='/Edit'>   
                     <br></br>
-                    <button type="button" class="btn btn-info">Edit</button>
+                    <button type="button" className="btn btn-info">Edit</button>
                 </Link>
 
                  {/* temporary link */}
                 <Link to='/Delete'>
                     <br />
-                    <button type="button" class="btn btn-danger">Delete</button>
+                    <button type="button" className="btn btn-danger">Delete</button>
                 </Link>
             </div>
             <img src={dontkickbucket} alt="Dont kick bucket" height={150} width={150}/>
