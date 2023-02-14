@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/76f55c1f-da55-4c40-b76c-91308b2a28fc/AppServices/subscriptions/76f55c1f-da55-4c40-b76c-91308b2a28fc/resourceGroups/AppServiceQS-rg/providers/Microsoft.Web/sites/HeyWhatsYourBucketList",
+    "appService.deploySubpath": "."
+}
