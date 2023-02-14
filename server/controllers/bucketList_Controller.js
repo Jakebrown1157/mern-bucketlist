@@ -1,17 +1,13 @@
 const buckets = require('express').Router()
-const db = require('../../src')
+const db = require('../models')
 const { Bucket } = db
-const { Op } = require('sequelize')
-const bucketModel = require('../models/bucketModel')
 
-// GET ALL BANDS
-buckets.get('/', async (req, res) => {
+
+// get one bucket
+buckets.get('/Home', async (req, res) => {
     try {
         const foundBuckets = await Bucket.findAll({
-            order: [[  ]],
-            where: {
-                name: {  }
-            }
+            order: [['difficulty', 'ASC' ]]
         })
         res.status(200).json(foundBuckets)
     } catch (err) {
@@ -20,37 +16,14 @@ buckets.get('/', async (req, res) => {
     }
 })
 
-// GET ONE BAND BY ID
-buckets.get('/:name', async (req, res) => {
+// get one bucket by id
+buckets.get('/:id', async (req, res) => {
     try {
         console.log(req.query)
-        const foundBuckets = await Bucket.findOne({
-            where: { name: req.params.name },
-            include: [
-                {
-                    model: bucketModel,
-                    as: 'bucketModel',
-                    include: {
-                        model: Event,
-                        as: 'event',
-                        where: {
-                            name: { [Op.like]: `%${req.query.event || ''}%` }
-                        }
-                    }
-                },
-                {
-                    model: SetTime,
-                    as: 'set_times',
-                    include: {
-                        model: Event,
-                        as: 'event',
-                        where: {
-                        }
-                    }
-                }
-            ]
+        const foundBucket = await Bucket.findOne({
+            where: { bucket_id: req.params.id },
         })
-        res.status(200).json(foundBand)
+        res.status(200).json(foundBucket)
     } catch (err) {
         res.status(500).send("Server error")
         console.log(err)
@@ -58,12 +31,12 @@ buckets.get('/:name', async (req, res) => {
 })
 
 
-// CREATE NEW BAND
-buckets.post('/', async (req, res) => {
+// CREATE NEW bucket
+buckets.post('/Create', async (req, res) => {
     try {
         const newBucket = await Bucket.create(req.body)
         res.status(200).json({
-            message: 'Band created successfully',
+            message: 'Bucket created successfully',
             data: newBucket
         })
     } catch (err) {
@@ -72,7 +45,7 @@ buckets.post('/', async (req, res) => {
     }
 })
 
-// UPDATE A BAND BY ID
+// UPDATE A bucket by id
 buckets.put('/:id', async (req, res) => {
     try {
         const updatedBucket = await Bucket.update(req.body, {
