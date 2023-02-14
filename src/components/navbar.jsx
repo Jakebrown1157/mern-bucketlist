@@ -34,9 +34,9 @@ export default function Navbar() {
                 </Link>
 
                  {/* temporary link */}
-                <Link to='/Delete'>
+                <Link to='/Leaderboard'>
                     <br />
-                    <button type="button" className="btn btn-danger">Delete</button>
+                    <button type="button" className="btn btn-dark">Leaderboard</button>
                 </Link>
             </div>
             <img src={dontkickbucket} alt="Dont kick bucket" height={150} width={150}/>
