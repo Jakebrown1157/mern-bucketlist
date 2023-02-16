@@ -7,7 +7,7 @@ export default function Navbar() {
     return(
         
         <nav className='nav' >
-            <img src={heybucket} alt="Hey bucket logo" height={150} width={150}/>
+            <img className='img' src={heybucket} alt="Hey bucket logo"/>
             <div className='buttons'>
 
                  {/* temporary link */}
@@ -39,7 +39,7 @@ export default function Navbar() {
                     <button type="button" className="btn btn-dark">Leaderboard</button>
                 </Link>
             </div>
-            <img src={dontkickbucket} alt="Dont kick bucket" height={150} width={150}/>
+            <img className='img' src={dontkickbucket} alt="Dont kick bucket" />
         </nav>
         
     )

@@ -2,11 +2,12 @@ import Navbar from './navbar.jsx'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import skull from '../assets/skull.png';
+import '../styles.css';
 
 export default function Edit() {
     return(
         <div>
-            <main style={{ display: 'flex', padding: 20, justifyContent: 'center', color: 'white' }}>
+            <main>
              <h1>Edit Bucket Page</h1>
              </main>
         <Navbar></Navbar>
