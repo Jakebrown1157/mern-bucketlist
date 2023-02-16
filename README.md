@@ -57,12 +57,9 @@ https://whatsyourbucketlist.azurewebsites.net/
 | GET | `/` | The intro page |
 | GET | `/home` | Index page listing all bucket activities |
 | GET | `/Create` | New form to create an activity |
-| POST | `/Edit` | Create a new bucket activity |
-| GET | `/buckets/:id/edit` | Edit form for a bucket activity |
-| PUT | `/buckets/:id` | Make changes to existing bucket activity |
-| DELETE | `/buckets/:id` | Delete a bucket activity  |
-| POST | `/buckets/:id/bucket` | Add rant to a bucket activity |
-| DELETE | `/buckets/:id/rant/:bucketId` | Delete a bucket activity |
+| POST | `/Edit/:id` | Create a new bucket activity |
+| DELETE | `/EDIT/:id` | Delete a bucket activity  |
+| POST | `/Create` | Add rant to a bucket activity |
 
 # Database
 
