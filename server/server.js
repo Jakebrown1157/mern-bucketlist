@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: false }))
 //controllers
 
 const bucketController = require('./controllers/bucketList_Controller')
-app.use('/app/Buckets', bucketController)
+app.use('/app/buckets', bucketController)
 
 
 //LISTEN

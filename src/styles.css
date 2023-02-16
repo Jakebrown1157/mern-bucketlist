@@ -57,20 +57,21 @@ body {
 }
 
 .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  #form_group {
-    color: #FFFFFF;
-  }
+#form_group {
+  color: #FFFFFF;
+}
 
-  h1 {
-    text-align: center;
-    margin: 0px auto;
-    display: block;
-    color: '#FFFFF' 
+
+h1 {
+  text-align: center;
+  margin: 0px auto;
+  display: block;
+  color: '#FFFFF' 
 }
 
 .img {
@@ -95,3 +96,4 @@ body {
     justify-content: center;
     border-radius: 25px;
 }
+
