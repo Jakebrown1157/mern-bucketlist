@@ -1,34 +1,58 @@
 import Navbar from './navbar.jsx'
+import supabase from '../config/supabaseClient'
 import { useState, useEffect } from 'react'
+
 
 const React = require('react')
 
 function Home() {
-  const [buckets, setBuckets] = useState([])
+  // console.log(supabase)
 
+  const [fetchError, setFetchError] = useState(null)
+  const [buckets, setBuckets] = useState(null)
+  
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('http://localhost:4005/api/buckets')
-      const json = await response.json()
-      setBuckets(json)
-    }
-    fetchData()
-  }, [] )
+      const { data, error } = await supabase
+      .from('buckets')
+      .select()
 
+      if (error) {
+        setFetchError('Could not fetch the bucket list items')
+        setBuckets(null)
+        console.log(error)
+      }
+      if (data) {
+        setBuckets(data)
+        setFetchError(null)
+        console.log(data)
+      }
+    }
+    
+    fetchData()
+  }, [])
+  
     return (
-      <div>
-        <main style={{ display: 'flex', padding: 20, justifyContent: 'center', color: 'white' }}>
-        <h1> Hey, Whats Your Bucket List?</h1>
-      </main>
-      <Navbar></Navbar>
-      <br></br>
-        <ul style={{marginTop: '25px', alignContent: 'center'}}>
-          { buckets.map((bucket, index ) => {
-            <li key={index} style={{paddingRight: '10px'}}>
-              <p> {bucket.item},{bucket.difficulty},{bucket.author},{bucket.description}</p>
-            </li>
-          })}
-        </ul>
+      <div style={{ height: '900px'}}>
+        <div style={{ display: 'flex', padding: 20, justifyContent: 'center', color: 'white' }}>
+            <h1> Hey, Whats Your Bucket List?</h1>
+        </div>
+        <Navbar></Navbar>
+        <br></br>
+        <main style={{ position: 'relative', left: '200px', top: '10px'}}>
+          {fetchError && (<p>{fetchError}</p>)}
+          {buckets && (
+            <div className='mainList'>
+
+              {buckets.map(bucket => {
+                return(
+                  <div> {bucket.name} </div>
+                )
+              })}
+
+            </div>
+          )}
+        </main>
       </div>
       
     )

@@ -3,8 +3,8 @@ const db = require('../models')
 const { Bucket } = db
 
 
-// get one bucket
-buckets.get('/Home', async (req, res) => {
+// get all the buckets
+buckets.get('/api', async (req, res) => {
     try {
         const foundBuckets = await Bucket.findAll({
             order: [['difficulty', 'ASC' ]]
@@ -17,7 +17,7 @@ buckets.get('/Home', async (req, res) => {
 })
 
 // get one bucket by id
-buckets.get('/Home/:id', async (req, res) => {
+buckets.get('/api/:id', async (req, res) => {
     try {
         console.log(req.query)
         const foundBucket = await Bucket.findOne({
@@ -32,7 +32,7 @@ buckets.get('/Home/:id', async (req, res) => {
 
 
 // CREATE NEW bucket
-buckets.post('/Create', async (req, res) => {
+buckets.post('/api/Create', async (req, res) => {
     try {
         const newBucket = await Bucket.create(req.body)
         res.status(200).json({
@@ -46,7 +46,7 @@ buckets.post('/Create', async (req, res) => {
 })
 
 // UPDATE A bucket by id
-buckets.put('/Edit/:id', async (req, res) => {
+buckets.put('/api/Edit/:id', async (req, res) => {
     try {
         const updatedBucket = await Bucket.update(req.body, {
             where: { bucket_id: req.params.id }
@@ -61,7 +61,7 @@ buckets.put('/Edit/:id', async (req, res) => {
 })
 
 // DELETE A BAND BY ID
-buckets.delete('/Delete/:id', async (req, res) => {
+buckets.delete('/api/Delete/:id', async (req, res) => {
     try {
         const deletedBucket = await Bucket.destroy({
             where: { bucket_id: req.params.id }
