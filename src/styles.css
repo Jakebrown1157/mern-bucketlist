@@ -95,3 +95,10 @@ body {
     justify-content: center;
     border-radius: 25px;
 }
+
+.intro_p {
+    text-align: center;
+    width: 60vw;
+    margin: auto;
+    padding: 20px;
+}
