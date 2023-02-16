@@ -1,8 +1,10 @@
 import Navbar from './navbar.jsx'
 import supabase from '../config/supabaseClient'
 import { useState, useEffect } from 'react'
-import skull from '../assets/skull.png'
 import { Link } from 'react-router-dom'
+import skull from '../assets/skull.png'
+import '../styles.css';
+
 
 
 const React = require('react')
@@ -35,6 +37,7 @@ function Home() {
   }, [])
   
     return (
+
       <div style={{ height: '900px'}}>
         <div style={{ display: 'flex', padding: 20, justifyContent: 'center', color: 'white' }}>
             <h1> Hey, Whats Your Bucket List?</h1>

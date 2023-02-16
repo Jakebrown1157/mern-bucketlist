@@ -1,10 +1,10 @@
 import Navbar from './navbar.jsx'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-// import skull from '../assets/skull.png'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import supabase from '../config/supabaseClient.js';
+import '../styles.css'
 
 export default function Create() {
     const[name, setName] = useState('')
@@ -41,7 +41,7 @@ export default function Create() {
 
     return (
         <div>
-            <main style={{ display: 'flex', padding: 20, justifyContent: 'center', color: 'white' }}>
+            <main>
                 <h1>Create Bucket Page</h1>
             </main>
             <Navbar></Navbar>

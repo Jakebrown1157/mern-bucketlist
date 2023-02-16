@@ -1,11 +1,11 @@
 import Navbar from './navbar.jsx'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-// import skull from '../assets/skull.png';
-
 import { useParams, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import supabase from '../config/supabaseClient'
+import '../styles.css';
+
 
 export default function Edit() {
     const[name, setName] = useState('')
@@ -67,12 +67,12 @@ export default function Edit() {
     }, [id, navigate])
 
     return(
-        <div>
-            <div style={{ display: 'flex', padding: 20, justifyContent: 'center', color: 'white' }}>
-             <h1>Edit Bucket Page</h1>
-            </div>
+    <main>
+        <div style={{ display: 'flex', padding: 20, justifyContent: 'center', color: 'white' }}>
+             <h1>Edit Bucket Page</h1
+             </div>
         <Navbar></Navbar>
-
+          <div>
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="activity">
                     <Form.Label>Bucket List Activity</Form.Label>
@@ -98,5 +98,6 @@ export default function Edit() {
                 {formError && <p className='error'>{formError}</p>}
             </Form>
         </div>
+     </main>
     )
 }
