@@ -54,7 +54,8 @@ function Home() {
                   <div style={{display: 'flex'}} key={bucket.bucket_id}> 
                     
                     <Link to={`/Edit/${bucket.bucket_id}`} className='column_1'> {bucket.name}</Link> 
-                    <p className='column_2'> {bucket.difficulty} <img src={skull} alt="skull" height={25} width={25}/> </p>
+                    <p className='column_2'> {bucket.difficulty} </p>
+                    <img src={skull} alt="skull" height={25} width={25}/>
                     <p className='column_3'> {bucket.author} </p>
                     <p className='column_4'> {bucket.description}</p>
                   </div>
