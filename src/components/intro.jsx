@@ -7,11 +7,11 @@ function Intro() {
     return(
         <div >
             <nav style={{display: 'flex'}}>
-                <img src={heybucket} alt="Hey bucket logo" className="center" height={350} width={350}/>
+                <img className="img_i" src={heybucket} alt="Hey bucket logo" />
                
             </nav>
 
-            <div style={{backgroundColor: 'grey', width: '80vw', margin: 'auto', align: 'center'}}>
+            <div className='intro'>
                 <p style={{width: '60vw', margin: 'auto', padding: '20px'}}>
                 <p>My partner asked me if I'd ever seen "The Bucket List."</p>
 

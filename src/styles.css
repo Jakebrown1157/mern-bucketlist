@@ -6,14 +6,20 @@
     font-family: 'Chewy', cursive;
 }
 
+:root {
+    --primary: #233252;
+    --secondary:#9BB08F;
+}
 body {
     margin: 0;
-    background-image: linear-gradient(to bottom, #233252, #9BB08F);
+    height: 900px;
+    background: linear-gradient(var(--primary), var(--secondary)),
+            url('./assets/comicdots.png');
     }
 
 
 .nav {
-    background-color: #edff59;
+    background-color: grey;
     color: #000000;
     display: flex;
     justify-content: center;
@@ -65,4 +71,27 @@ body {
     margin: 0px auto;
     display: block;
     color: '#FFFFF' 
+}
+
+.img {
+    height:150px;
+    width:150px;
+    border-radius: 25px;
+}
+
+.img_i{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 350px;
+     width: 350px;
+     border-radius: 25px;
+}
+
+.intro{
+    background-color: #808080;
+    width: 80vw;
+    margin: auto;
+    justify-content: center;
+    border-radius: 25px;
 }
