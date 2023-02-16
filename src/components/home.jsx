@@ -29,7 +29,7 @@ function Home() {
       if (data) {
         setBuckets(data)
         setFetchError(null)
-        console.log(data)
+        // console.log(data)
       }
     }
     
@@ -52,8 +52,9 @@ function Home() {
               {buckets.map(bucket => {
                 return(
                   <div style={{display: 'flex'}} key={bucket.bucket_id}> 
-                    
+                    <div> 
                     <Link to={`/Edit/${bucket.bucket_id}`} className='column_1'> {bucket.name}</Link> 
+                    </div>
                     <p className='column_2'> {bucket.difficulty} </p>
                     <img src={skull} alt="skull" height={25} width={25}/>
                     <p className='column_3'> {bucket.author} </p>

@@ -41,7 +41,7 @@ export default function Create() {
 
     return (
         <div>
-            <main>
+            <main >
                 <h1>Create Bucket Page</h1>
             </main>
             <Navbar></Navbar>

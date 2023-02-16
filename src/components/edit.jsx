@@ -16,6 +16,23 @@ export default function Edit() {
 
     const { id } = useParams()
     const navigate = useNavigate()
+    
+    const handleDelete = async () => {
+        const {data, error} = await supabase
+            .from('buckets')
+            .delete()
+            .eq('bucket_id', id)
+            .select()
+
+            if (error) {
+                console.log(error)
+            }
+            if (data) {
+                console.log(data)
+                setFormError(null)
+                navigate('/home')
+            }
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -71,9 +88,9 @@ export default function Edit() {
         <div style={{ display: 'flex', padding: 20, justifyContent: 'center', color: 'white' }}>
              <h1>Edit Bucket Page</h1>
         </div>
-            <div>
             <Navbar></Navbar>
-          
+
+            <div>
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="activity">
                     <Form.Label>Bucket List Activity</Form.Label>
@@ -96,6 +113,7 @@ export default function Edit() {
                 </Form.Group>
 
                 <Button variant="primary" type="submit">Update Activity</Button>
+                <Button variant="danger" onClick={handleDelete}>Delete Activity</Button>
                 {formError && <p className='error'>{formError}</p>}
             </Form>
         </div>

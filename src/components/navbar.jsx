@@ -10,8 +10,6 @@ export default function Navbar() {
             <img className='img' src={heybucket} alt="Hey bucket logo"/>
             <div className='buttons'>
 
-                 {/* temporary link */}
-
                 <Link to='/'>
                     <br />
                     <button type="button" className="btn btn-warning">Intro</button>
@@ -27,13 +25,6 @@ export default function Navbar() {
                     <button type="button" className="btn btn-success">Create</button>
                 </Link>
 
-                 {/* temporary link */}
-                {/* <Link to='/Edit'>   
-                    <br></br>
-                    <button type="button" className="btn btn-info">Edit</button>
-                </Link> */}
-
-                 {/* temporary link */}
                 <Link to='/Leaderboard'>
                     <br />
                     <button type="button" className="btn btn-dark">Leaderboard</button>
