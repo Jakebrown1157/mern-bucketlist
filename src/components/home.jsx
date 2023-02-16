@@ -1,10 +1,20 @@
 import Navbar from './navbar.jsx'
-import Table from './table.jsx'
-
+import { useState, useEffect } from 'react'
 
 const React = require('react')
 
 function Home() {
+  const [buckets, setBuckets] = useState([])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch('http://localhost:4005/api/buckets')
+      const json = await response.json()
+      setBuckets(json)
+    }
+    fetchData()
+  }, [] )
+
     return (
       <div>
         <main style={{ display: 'flex', padding: 20, justifyContent: 'center', color: 'white' }}>
@@ -12,7 +22,13 @@ function Home() {
       </main>
       <Navbar></Navbar>
       <br></br>
-      <Table></Table>
+        <ul style={{marginTop: '25px', alignContent: 'center'}}>
+          { buckets.map((bucket, index ) => {
+            <li key={index} style={{paddingRight: '10px'}}>
+              <p> {bucket.item},{bucket.difficulty},{bucket.author},{bucket.description}</p>
+            </li>
+          })}
+        </ul>
       </div>
       
     )
