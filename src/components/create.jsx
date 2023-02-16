@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 // import skull from '../assets/skull.png'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import supabase from '../config/supabaseClient.js';
 
 export default function Create() {
@@ -11,6 +12,8 @@ export default function Create() {
     const[author, setAuthor] = useState('')
     const[description, setDescription] = useState('')
     const[formError, setFormError] = useState('')
+
+    const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -23,6 +26,7 @@ export default function Create() {
         const { data, error } = await supabase
             .from('buckets')
             .insert([{name, difficulty, author, description}])
+            .select()
 
         if (error) {
             setFormError('please fill out all the fields correctly')
@@ -31,6 +35,7 @@ export default function Create() {
         if (data) {
             console.log(data)
             setFormError(null)
+            navigate('/Home')
         }
     }
 
@@ -41,7 +46,7 @@ export default function Create() {
             </main>
             <Navbar></Navbar>
            
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit} >
                 <Form.Group className="mb-3" controlId="activity">
                     <Form.Label>Bucket List Activity</Form.Label>
                         <Form.Control type='text' value={name} onChange={(e) => setName(e.target.value)} placeholder="Activity"></Form.Control>
@@ -62,11 +67,11 @@ export default function Create() {
                         <Form.Control type='text' value={description} onChange={(e) => setDescription(e.target.value)} placeholder="description"></Form.Control>
                 </Form.Group>
 
-                <Button variant="primary" type="submit">
-                    Create
-                </Button>
+                <Button variant="primary" type="submit">Create</Button>
                 {formError && <p className='error'>{formError}</p>}
             </Form>
         </div>
     )
 }
+
+

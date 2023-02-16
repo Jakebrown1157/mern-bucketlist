@@ -1,55 +1,102 @@
 import Navbar from './navbar.jsx'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import skull from '../assets/skull.png';
+// import skull from '../assets/skull.png';
+
+import { useParams, useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import supabase from '../config/supabaseClient'
 
 export default function Edit() {
+    const[name, setName] = useState('')
+    const[difficulty, setDifficulty] = useState('')
+    const[author, setAuthor] = useState('')
+    const[description, setDescription] = useState('')
+    const[formError, setFormError] = useState('')
+
+    const { id } = useParams()
+    const navigate = useNavigate()
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+
+        if(!name || !difficulty || !author || !description) {
+            setFormError('please fill out all the empty fields')
+            return
+        }
+
+        const { data, error } = await supabase 
+            .from('buckets')
+            .update({name, difficulty, author, description})
+            .eq('bucket_id', id)
+            .select()
+
+        if(error){
+            console.log(error)
+            setFormError('please fill out all the empty fields')
+        }
+
+        if(data){
+            console.log(data)
+            setFormError(null)
+            navigate('/home')
+        }
+    }
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const { data, error} = await supabase
+            .from('buckets')
+            .select()
+            .eq('bucket_id', id)
+            .single()
+
+            if (error) {
+                navigate('/Home', { replace: true })
+            }
+            if (data) {
+                setName(data.name)
+                setDifficulty(data.difficulty)
+                setAuthor(data.author)
+                setDescription(data.description)
+                console.log(data)
+            }
+        }
+        fetchData()
+
+    }, [id, navigate])
+
     return(
         <div>
-            <main style={{ display: 'flex', padding: 20, justifyContent: 'center', color: 'white' }}>
+            <div style={{ display: 'flex', padding: 20, justifyContent: 'center', color: 'white' }}>
              <h1>Edit Bucket Page</h1>
-             </main>
+            </div>
         <Navbar></Navbar>
-        <Form>
-                <Form.Group className="mb-3" controlId="activity" >
+
+            <Form onSubmit={handleSubmit}>
+                <Form.Group className="mb-3" controlId="activity">
                     <Form.Label>Bucket List Activity</Form.Label>
-                    <Form.Control type="activity" placeholder="Activity"  />
+                        <Form.Control type='text' value={name} onChange={(e) => setName(e.target.value)} placeholder="Activity"></Form.Control>
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="description">
-                    <Form.Label>Description</Form.Label>
-                    <Form.Control type="description" placeholder="Description" />
+
+                <Form.Group className="mb-3" controlId="Difficulty">
+                    <Form.Label>Difficulty</Form.Label>
+                        <Form.Control type='number' value={difficulty} onChange={(e) => setDifficulty(e.target.value)} placeholder="Difficulty" min={0} max={3}></Form.Control>
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="Checkbox1">
-                    <Form.Check type="checkbox1" label="1 Danger Skull"  />
-                    <img src={skull} alt="skull" height={25} width={25}/>
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="Checkbox2">
-                    <Form.Check type="checkbox2" label="2 Danger Skulls" />
-                    <img src={skull} alt="skull" height={25} width={25}/>
-                    <img src={skull} alt="skull" height={25} width={25}/>
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="Checkbox3">
-                    <Form.Check type="checkbox3" label="3 Danger Skulls" />
-                    <img src={skull} alt="skull" height={25} width={25}/>
-                    <img src={skull} alt="skull" height={25} width={25}/>
-                    <img src={skull} alt="skull" height={25} width={25}/>
-                </Form.Group>
+
                 <Form.Group className="mb-3" controlId="author">
                     <Form.Label>Author</Form.Label>
-                    <Form.Control type="author" placeholder="Author" />
+                        <Form.Control type='text' value={author} onChange={(e) => setAuthor(e.target.value)} placeholder="Author"></Form.Control>
                 </Form.Group>
-                <Button variant="primary" type="cancel">
-                    Cancel
-                </Button>
-                <Button variant="info" type="edit">
-                    Edit
-                </Button>
-                <Button variant="danger" type="delete">
-                    Delete
-                </Button>
+
+                <Form.Group className="mb-3" controlId="description">
+                    <Form.Label>Description</Form.Label>
+                        <Form.Control type='text' value={description} onChange={(e) => setDescription(e.target.value)} placeholder="description"></Form.Control>
+                </Form.Group>
+
+                <Button variant="primary" type="submit">Update Activity</Button>
+                {formError && <p className='error'>{formError}</p>}
             </Form>
-    </div>
+        </div>
     )
 }
-
- {/* temporary link */}

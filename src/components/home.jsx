@@ -2,6 +2,8 @@ import Navbar from './navbar.jsx'
 import supabase from '../config/supabaseClient'
 import { useState, useEffect } from 'react'
 import skull from '../assets/skull.png'
+import { Link } from 'react-router-dom'
+
 
 const React = require('react')
 
@@ -47,7 +49,8 @@ function Home() {
               {buckets.map(bucket => {
                 return(
                   <div style={{display: 'flex'}} key={bucket.bucket_id}> 
-                    <p>{bucket.name}</p> 
+                    
+                    <Link to={`/Edit/${bucket.bucket_id}`} className='column_1'> {bucket.name}</Link> 
                     <p className='column_2'> {bucket.difficulty} <img src={skull} alt="skull" height={25} width={25}/> </p>
                     <p className='column_3'> {bucket.author} </p>
                     <p className='column_4'> {bucket.description}</p>

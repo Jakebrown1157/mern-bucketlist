@@ -28,10 +28,10 @@ export default function Navbar() {
                 </Link>
 
                  {/* temporary link */}
-                <Link to='/Edit'>   
+                {/* <Link to='/Edit'>   
                     <br></br>
                     <button type="button" className="btn btn-info">Edit</button>
-                </Link>
+                </Link> */}
 
                  {/* temporary link */}
                 <Link to='/Leaderboard'>
