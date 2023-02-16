@@ -11,7 +11,8 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom'
 function App() {
  
   return (
-   <div>
+    <div className='container'>
+      <div className='color'>
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Intro />} ></Route>
@@ -22,6 +23,7 @@ function App() {
       </Routes>
     </BrowserRouter>
    </div>
+  </div>
   );
 }
 
