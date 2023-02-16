@@ -69,7 +69,8 @@ body {
     text-align: center;
     margin: 0px auto;
     display: block;
-    color: '#FFFFF' 
+    color: '#FFFFF';
+    text-shadow: 2px 2px red;
 }
 
 .img {
