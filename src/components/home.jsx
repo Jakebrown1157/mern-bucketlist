@@ -1,5 +1,7 @@
 import Navbar from './navbar.jsx'
 import { useState, useEffect } from 'react'
+import '../styles.css';
+
 
 const React = require('react')
 
@@ -17,8 +19,8 @@ function Home() {
 
     return (
       <div>
-        <main style={{ display: 'flex', padding: 20, justifyContent: 'center', color: 'white' }}>
-        <h1> Hey, Whats Your Bucket List?</h1>
+        <main>
+        <h1>Hey, Whats Your Bucket List?</h1>
       </main>
       <Navbar></Navbar>
       <br></br>

@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
 
 * {
     box-sizing: border-box;
     color: #FFFFFF;
-    font-family: cursive;
+    font-family: 'Chewy', cursive;
 }
 
 body {
@@ -58,3 +59,10 @@ body {
   #form_group {
     color: #FFFFFF;
   }
+
+  h1 {
+    text-align: center;
+    margin: 0px auto;
+    display: block;
+    color: '#FFFFF' 
+}
