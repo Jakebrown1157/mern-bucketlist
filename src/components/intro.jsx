@@ -11,20 +11,20 @@ function Intro() {
                
             </nav>
 
-            <div style={{backgroundColor: 'lightgrey', width: '80vw', margin: 'auto'}}>
+            <div style={{backgroundColor: 'grey', width: '80vw', margin: 'auto', align: 'center'}}>
                 <p style={{width: '60vw', margin: 'auto', padding: '20px'}}>
-                My partner asked me if I'd ever seen "The Bucket List."
+                <p>My partner asked me if I'd ever seen "The Bucket List."</p>
 
-                I said no, but I'd like to before I die.
+                <p>I said no, but I'd like to before I die.</p>
 
-               Find out whats on people's bucket list and add some ideas of your own!  Are you just living or are you alive? 
+                <p>Find out whats on people's bucket list and add some ideas of your own!  Are you just living or are you alive?</p> 
 
                 </p>
             </div>
             <br></br>
-            <Link to='/home' style={{ display: 'flex', padding: 20, justifyContent: 'center', backgroundColor: 'grey', width: '80vw', margin: 'auto'}}>
+            <Link to='/home' style={{ display: 'flex', padding: 20, justifyContent: 'center', width: '80vw', margin: 'auto'}}>
                 <br></br>
-                <button type="button" className="btn btn-danger">Enter if you dare!!</button>
+                <button type="button" className="btn btn-danger">ENTER IF YOU DARE!!</button>
             </Link>
         </div>
     )
