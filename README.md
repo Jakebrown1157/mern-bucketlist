@@ -116,4 +116,6 @@ This was an amazing project to work on with the team that we built. Everyone wor
 
 # Yara
 
-
+I was super exited to work on this project. I learned a lot from Jake and Alex. I appreciate them dedicating time and energy inside and outside of class. We divided up the sections to focus on and we helped each other out. Even when some of questions were silly, we felt comfortable asking each other for guidance. 
+ 
+We wanted to create a bucket list that was fun! We were inspired to make it comic book style and a homage to the movie "Dude, Where's my Car?".
