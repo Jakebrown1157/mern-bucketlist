@@ -1,7 +1,7 @@
 import Navbar from './navbar.jsx'
 import supabase from '../config/supabaseClient'
 import { useState, useEffect } from 'react'
-
+import skull from '../assets/skull.png'
 
 const React = require('react')
 
@@ -39,14 +39,19 @@ function Home() {
         </div>
         <Navbar></Navbar>
         <br></br>
-        <main style={{ position: 'relative', left: '200px', top: '10px'}}>
+        <main style={{display: 'flex', justifyContent: 'center', margin: 'auto'}}>
           {fetchError && (<p>{fetchError}</p>)}
           {buckets && (
             <div className='mainList'>
 
               {buckets.map(bucket => {
                 return(
-                  <div> {bucket.name} </div>
+                  <div style={{display: 'flex'}} key={bucket.bucket_id}> 
+                    <p>{bucket.name}</p> 
+                    <p className='column_2'> {bucket.difficulty} <img src={skull} alt="skull" height={25} width={25}/> </p>
+                    <p className='column_3'> {bucket.author} </p>
+                    <p className='column_4'> {bucket.description}</p>
+                  </div>
                 )
               })}
 

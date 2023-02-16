@@ -32,7 +32,7 @@ buckets.get('/api/:id', async (req, res) => {
 
 
 // CREATE NEW bucket
-buckets.post('/api/Create', async (req, res) => {
+buckets.post('/api/create', async (req, res) => {
     try {
         const newBucket = await Bucket.create(req.body)
         res.status(200).json({
