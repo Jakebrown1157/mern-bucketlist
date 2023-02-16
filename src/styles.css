@@ -13,8 +13,7 @@
 body {
     margin: 0;
     height: 900px;
-    background: linear-gradient(var(--primary), var(--secondary)),
-            url('./assets/comicdots.png');
+    background: linear-gradient(var(--primary), var(--secondary));
     }
 
 
