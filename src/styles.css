@@ -25,6 +25,8 @@ body {
     align-items: center;
     padding: 0 1rem;
     height: 200px;
+    border-radius: 25px;
+    box-shadow: .50em .50em 1em #FFFFFF;
 }
 
 
@@ -37,6 +39,7 @@ body {
     display: flex;
     height: 40px;
     width: 80px;
+    
 }
 
 .nav div {
@@ -52,7 +55,7 @@ body {
 }
 
 .nav a.active {
-    background-color: #555
+    background-color: #5552;
 }
 
 .center {
@@ -77,6 +80,7 @@ body {
     height:150px;
     width:150px;
     border-radius: 25px;
+    box-shadow: .50em .50em 1em;
 }
 
 .img_i{
@@ -84,8 +88,9 @@ body {
     margin-left: auto;
     margin-right: auto;
     height: 250px;
-     width: 250px;
-     border-radius: 25px;
+    width: 250px;
+    border-radius: 25px;
+    box-shadow: .50em .50em 1em;
 }
 
 .intro{
@@ -94,6 +99,7 @@ body {
     margin: auto;
     justify-content: center;
     border-radius: 25px;
+    box-shadow: .75em .75em 1em;
 }
 
 .intro_p {

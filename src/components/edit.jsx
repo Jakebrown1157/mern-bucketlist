@@ -11,6 +11,7 @@ export default function Edit() {
              <h1>Edit Bucket Page</h1>
              </main>
         <Navbar></Navbar>
+        
         <Form>
                 <Form.Group className="mb-3" controlId="activity" >
                     <Form.Label>Bucket List Activity</Form.Label>
@@ -49,6 +50,7 @@ export default function Edit() {
                     Delete
                 </Button>
             </Form>
+        
     </div>
     )
 }
