@@ -9,7 +9,10 @@
 :root {
     --primary: #233252;
     --secondary:#9BB08F;
+
+    --size-divisor: 3;
 }
+
 body {
     margin: 0;
     height: 900px;
@@ -24,7 +27,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 0 1rem;
-    height: 200px;
+    height: calc(200px / var(--size-divisor));
     border-radius: 25px;
     box-shadow: .50em .50em 1em #FFFFFF;
 }
@@ -37,21 +40,23 @@ body {
     justify-content: center;
     list-style: none;
     display: flex;
-    height: 40px;
-    width: 80px;
+    height: calc(40px / var(--size-divisor));
+    width: calc(50px / var(--size-divisor));
     
 }
 
 .nav div {
     display: flex;
-    margin-left: 40px;
-    margin-right: 40px;
-    padding-left: 50px;
-    padding-right: 50px;
+    margin-left: calc(40px / var(--size-divisor));
+    margin-right: calc(40px / var(--size-divisor));
+    padding-left: calc(50px / var(--size-divisor));
+    padding-right: calc(50px / var(--size-divisor));
     border: 0.5rem solid #004aad;
     position: relative;
     top: 30px;
     border-radius: 25px;
+    object-fit: cover;
+    object-position: bottom;
 }
 
 .nav a.active {
@@ -77,20 +82,24 @@ body {
 }
 
 .img {
-    height:150px;
-    width:150px;
+    height:calc(150px / var(--size-divisor));
+    width: calc(150px / var(--size-divisor));
     border-radius: 25px;
     box-shadow: .50em .50em 1em;
+    object-fit: cover;
+    object-position: bottom;
 }
 
 .img_i{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    height: 250px;
-    width: 250px;
+    height: calc(250px / var(--size-divisor));
+    width: calc(250px / var(--size-divisor));
     border-radius: 25px;
     box-shadow: .50em .50em 1em;
+    object-fit: cover;
+    object-position: bottom;
 }
 
 .intro{
@@ -108,3 +117,35 @@ body {
     margin: auto;
     padding: 20px;
 }
+
+.btn {
+    background-image: url('./assets/buttonbackground.png');
+    color: #FFFF;
+    box-shadow: 0 8px 16px;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+@media (min-width: 576px) {
+    :root
+    .btn
+    .img
+    .img_i{
+      --size-divisor: 2;
+    }
+  }
+  @media (min-width: 768px) {
+    :root{
+      --size-divisor: 1.5;
+    }
+  }
+  @media (min-width: 992px) { 
+    :root {
+      --size-divisor: 1;
+    }
+  }
+  @media (min-width: 1200px) { 
+    :root{
+      --size-divisor: .67;
+    }
+  }
