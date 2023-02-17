@@ -57,6 +57,7 @@ body {
     border-radius: 25px;
     object-fit: cover;
     object-position: bottom;
+    box-shadow: .50em .50em 1em #FFFFFF;
 }
 
 .nav a.active {
