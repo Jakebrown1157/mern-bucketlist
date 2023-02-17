@@ -127,10 +127,7 @@ body {
 }
 
 @media (min-width: 576px) {
-    :root
-    .btn
-    .img
-    .img_i{
+    :root{
       --size-divisor: 2;
     }
   }
