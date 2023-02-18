@@ -74,7 +74,7 @@ export default function Edit() {
             <div>
             <Navbar></Navbar>
           
-            <Form onSubmit={handleSubmit}>
+            <Form id='formStyle' onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="activity">
                     <Form.Label>Bucket List Activity</Form.Label>
                         <Form.Control type='text' value={name} onChange={(e) => setName(e.target.value)} placeholder="Activity"></Form.Control>

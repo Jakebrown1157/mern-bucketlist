@@ -46,7 +46,7 @@ export default function Create() {
             </main>
             <Navbar></Navbar>
            
-            <Form onSubmit={handleSubmit} >
+            <Form id='formStyle' onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="activity">
                     <Form.Label>Bucket List Activity</Form.Label>
                         <Form.Control type='text' value={name} onChange={(e) => setName(e.target.value)} placeholder="Activity"></Form.Control>
@@ -54,7 +54,7 @@ export default function Create() {
 
                 <Form.Group className="mb-3" controlId="Difficulty">
                     <Form.Label>Difficulty</Form.Label>
-                        <Form.Control type='number' value={difficulty} onChange={(e) => setDifficulty(e.target.value)} placeholder="Difficulty" min={0} max={3}></Form.Control>
+                        <Form.Control type='number' value={difficulty} onChange={(e) => setDifficulty(e.target.value)} placeholder="Difficulty scale between 1-3, 1 being Easy, 3 being Super Difficult" min={0} max={3}></Form.Control>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="author">

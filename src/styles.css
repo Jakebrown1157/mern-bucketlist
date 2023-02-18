@@ -97,3 +97,8 @@ h1 {
     border-radius: 25px;
 }
 
+
+#formStyle {
+    max-width: 90%;
+    margin-left: 5%;
+}
