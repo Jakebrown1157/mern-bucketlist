@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import skull from '../assets/skull.png'
 import '../styles.css';
-
+import Table from 'react-bootstrap/Table';
 
 
 const React = require('react')
@@ -44,24 +44,40 @@ function Home() {
         </div>
         <Navbar></Navbar>
         <br></br>
-        <main style={{display: 'flex', justifyContent: 'center', margin: 'auto'}}>
-          {fetchError && (<p>{fetchError}</p>)}
-          {buckets && (
-            <div className='mainList'>
 
+        
+        <main>
+          {fetchError && (<p>{fetchError}</p>)}
+
+
+
+     
+          {buckets && (
+            <div>
+              <Table striped bordered hover variant="dark" style={{maxWidth: "90%", marginLeft: "5%"}}>
+                  <thead>
+                    <tr>
+                      <th>Bucket List Item</th>
+                      <th>Difficulty</th>
+                      <th>Author</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
               {buckets.map(bucket => {
                 return(
-                  <div style={{display: 'flex'}} key={bucket.bucket_id}> 
-                    
-                    <Link to={`/Edit/${bucket.bucket_id}`} className='column_1'> {bucket.name}</Link> 
-                    <p className='column_2'> {bucket.difficulty} </p>
-                    <img src={skull} alt="skull" height={25} width={25}/>
-                    <p className='column_3'> {bucket.author} </p>
-                    <p className='column_4'> {bucket.description}</p>
-                  </div>
-                )
-              })}
-
+                  
+                  <tbody>
+                    <tr key={bucket.bucket_id}> 
+                        
+                        <td ><Link style={{textDecoration: "none", color: 'white'}} to={`/Edit/${bucket.bucket_id}`} > {bucket.name}</Link></td>
+                        <td>{bucket.difficulty} </td>
+                        <td>{bucket.author} </td>
+                        <td>{bucket.description}</td>
+                    </tr>
+                  </tbody>
+                  
+                )})}
+                </Table>
             </div>
           )}
         </main>
