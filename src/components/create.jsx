@@ -46,28 +46,28 @@ export default function Create() {
             </main>
             <Navbar></Navbar>
            
-            <Form id='formStyle' onSubmit={handleSubmit}>
-                <Form.Group className="mb-3" controlId="activity">
-                    <Form.Label>Bucket List Activity</Form.Label>
-                        <Form.Control type='text' value={name} onChange={(e) => setName(e.target.value)} placeholder="Activity"></Form.Control>
+            <Form id='formStyle' onSubmit={handleSubmit} style={{marginTop: '30px'}}>
+                <Form.Group id='formStyleGroup' className="mb-3" controlId="activity">
+                    <Form.Label >Bucket List Activity</Form.Label>
+                        <Form.Control size="sm" type='text' value={name} onChange={(e) => setName(e.target.value)} placeholder="Activity"></Form.Control>
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="Difficulty">
+                <Form.Group id='formStyleGroup' className="mb-3" controlId="Difficulty">
                     <Form.Label>Difficulty</Form.Label>
-                        <Form.Control type='number' value={difficulty} onChange={(e) => setDifficulty(e.target.value)} placeholder="Difficulty scale between 1-3, 1 being Easy, 3 being Super Difficult" min={0} max={3}></Form.Control>
+                        <Form.Control size="sm" type='number' value={difficulty} onChange={(e) => setDifficulty(e.target.value)} placeholder="Difficulty scale between 1-3, 1 being Easy, 3 being Super Difficult" min={0} max={3}></Form.Control>
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="author">
+                <Form.Group id='formStyleGroup' className="mb-3" controlId="author">
                     <Form.Label>Author</Form.Label>
-                        <Form.Control type='text' value={author} onChange={(e) => setAuthor(e.target.value)} placeholder="Author"></Form.Control>
+                        <Form.Control size="sm" type='text' value={author} onChange={(e) => setAuthor(e.target.value)} placeholder="Author"></Form.Control>
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="description">
+                <Form.Group id='formStyleGroup' className="mb-3" controlId="description">
                     <Form.Label>Description</Form.Label>
-                        <Form.Control type='text' value={description} onChange={(e) => setDescription(e.target.value)} placeholder="description"></Form.Control>
+                        <Form.Control size="sm" type='text' value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Description"></Form.Control>
                 </Form.Group>
 
-                <Button variant="primary" type="submit">Create</Button>
+                <Button variant="primary" style={{alignItems: 'center'}} type="submit">Create</Button>
                 {formError && <p className='error'>{formError}</p>}
             </Form>
         </div>

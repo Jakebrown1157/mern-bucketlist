@@ -101,4 +101,14 @@ h1 {
 #formStyle {
     max-width: 90%;
     margin-left: 5%;
+    background-color: #2C3034;
+    padding-right: 3%;
+    padding-top: 20px;
+}
+
+#formStyleGroup {
+    margin-left: 2%;
+    background-color: #2C3034;
+    color:white
+    
 }
