@@ -70,12 +70,14 @@ export default function Edit() {
     <main>
         <div style={{ display: 'flex', padding: 20, justifyContent: 'center', color: 'white' }}>
              <h1>Edit Bucket Page</h1>
+
         </div>
-            <div>
+        <div>
             <Navbar></Navbar>
           
             <Form id='formStyle' onSubmit={handleSubmit}style={{marginTop: '30px'}}>
                 <Form.Group id='formStyleGroup' className="mb-3" controlId="activity">
+
                     <Form.Label>Bucket List Activity</Form.Label>
                         <Form.Control size="sm" type='text' value={name} onChange={(e) => setName(e.target.value)} placeholder="Activity"></Form.Control>
                 </Form.Group>
@@ -100,5 +102,6 @@ export default function Edit() {
             </Form>
         </div>
      </main>
+
     )
 }
