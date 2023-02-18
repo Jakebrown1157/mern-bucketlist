@@ -7,8 +7,17 @@
 }
 
 :root {
-    --primary: #233252;
-    --secondary:#9BB08F;
+    --primary: #ED6207;
+    --secondary: #E9B805;
+
+    --color-bg: #8E4A94;
+    --color-bg-variant: #FFE266;
+
+    --btn-cl: #8DCA0C; 
+    --btn-cl-variant: #D2E504;
+
+    --white: #FFFFFF;
+    --blue: #0504AA; 
 
     --size-divisor: 3;
 }
@@ -16,20 +25,18 @@
 body {
     margin: 0;
     height: 900px;
-    background: linear-gradient(var(--primary), var(--secondary));
-    }
-
+    background: linear-gradient(var(--color-bg), var(--color-bg-variant));
+}
 
 .nav {
-    background-color: grey;
-    color: #000000;
+    background: linear-gradient(to top left, var(--primary),var( --secondary));
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0 1rem;
     height: calc(200px / var(--size-divisor));
     border-radius: 25px;
-    box-shadow: .50em .50em 1em #FFFFFF;
+    box-shadow: .25em .25em 1em var(--white);
 }
 
 
@@ -51,14 +58,16 @@ body {
     margin-right: calc(40px / var(--size-divisor));
     padding-left: calc(50px / var(--size-divisor));
     padding-right: calc(50px / var(--size-divisor));
-    border: 0.5rem solid #004aad;
+    background: linear-gradient(to top left, var(--primary),var( --secondary)) padding-box,
+    linear-gradient(to right, var(--color-bg), var(--blue)) border-box;
+    border-radius: 25px;
+    border: 4px solid transparent;
     position: relative;
     top: 30px;
-    border-radius: 25px;
     object-fit: cover;
     object-position: bottom;
-    box-shadow: .50em .50em 1em #FFFFFF;
 }
+
 
 .nav a.active {
     background-color: #5552;
@@ -74,7 +83,7 @@ body {
     color: #FFFFFF;
   }
 
-  h1 {
+h1 {
     text-align: center;
     margin: 0px auto;
     display: block;
@@ -86,7 +95,8 @@ body {
     height:calc(150px / var(--size-divisor));
     width: calc(150px / var(--size-divisor));
     border-radius: 25px;
-    box-shadow: .50em .50em 1em;
+    box-shadow: .25em .25em 1em var(--white);
+    opacity: .8;
     object-fit: cover;
     object-position: bottom;
 }
@@ -98,18 +108,19 @@ body {
     height: calc(250px / var(--size-divisor));
     width: calc(250px / var(--size-divisor));
     border-radius: 25px;
-    box-shadow: .50em .50em 1em;
+    box-shadow: .25em .25em 1em var(--white);
+    opacity: .8;
     object-fit: cover;
     object-position: bottom;
 }
 
 .intro{
-    background-color: #808080;
+    background: linear-gradient(to top left, var(--primary),var( --secondary));
     width: 80vw;
     margin: auto;
     justify-content: center;
     border-radius: 25px;
-    box-shadow: .75em .75em 1em;
+    box-shadow: .25em .25em 1em var(--white);
 }
 
 .intro_p {
@@ -120,11 +131,14 @@ body {
 }
 
 .btn {
-    background-image: url('./assets/buttonbackground.png');
-    color: #FFFF;
-    box-shadow: 0 8px 16px;
+    background-image: linear-gradient(var(--btn-cl), var(--btn-cl-variant));
+    box-shadow: 0 4px 8px;
     object-fit: cover;
     object-position: bottom;
+}
+
+p {
+    text-shadow: 2px 2px red;
 }
 
 @media (min-width: 576px) {
