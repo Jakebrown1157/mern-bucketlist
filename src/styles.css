@@ -58,8 +58,8 @@ body {
     display: flex;
     margin-left: calc(40px / var(--size-divisor));
     margin-right: calc(40px / var(--size-divisor));
-    padding-left: calc(50px / var(--size-divisor));
-    padding-right: calc(50px / var(--size-divisor));
+    padding-left: calc(40px / var(--size-divisor));
+    padding-right: calc(60px / var(--size-divisor));
     background: linear-gradient(to top left, var(--primary),var( --secondary)) padding-box,
     linear-gradient(to right, var(--color-bg), var(--blue)) border-box;
     border-radius: 25px;
@@ -90,7 +90,7 @@ h1 {
     margin: 0px auto;
     display: block;
     color: '#FFFFF';
-    text-shadow: 2px 2px red;
+    text-shadow: 2px 2px #ff0000;
 
 }
 
@@ -155,10 +155,16 @@ h1 {
     box-shadow: 0 4px 8px;
     object-fit: cover;
     object-position: bottom;
+  
 }
 
+#leaderboard{
+    margin-left: 40px;
+    object-fit: cover;
+    object-position: bottom;
+}
 p {
-    text-shadow: 2px 2px red;
+    text-shadow: 2px 2px #ff0000;
 }
 
 @media (min-width: 576px) {

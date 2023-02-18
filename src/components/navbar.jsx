@@ -38,7 +38,7 @@ export default function Navbar() {
                  {/* temporary link */}
                 <Link to='/Leaderboard'>
                     <br />
-                    <button type="button" className="btn">Leaderboard</button>
+                    <button id="leaderboard" type="button" className="btn">Leaderboard</button>
                 </Link>
             </div>
             <img className='img' src={dontkickbucket} alt="Dont kick bucket" />
