@@ -74,14 +74,14 @@ body {
 }
 
 .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  #form_group {
-    color: #FFFFFF;
-  }
+#form_group {
+  color: #FFFFFF;
+}
 
 h1 {
     text-align: center;
@@ -89,6 +89,7 @@ h1 {
     display: block;
     color: '#FFFFF';
     text-shadow: 2px 2px red;
+
 }
 
 .img {
@@ -120,6 +121,25 @@ h1 {
     margin: auto;
     justify-content: center;
     border-radius: 25px;
+
+}
+
+
+#formStyle {
+    max-width: 90%;
+    margin-left: 5%;
+    background-color: #2C3034;
+    padding-right: 3%;
+    padding-top: 20px;
+}
+
+#formStyleGroup {
+    margin-left: 2%;
+    background-color: #2C3034;
+    color:white
+    
+}
+
     box-shadow: .25em .25em 1em var(--white);
 }
 
@@ -161,3 +181,4 @@ p {
       --size-divisor: .67;
     }
   }
+

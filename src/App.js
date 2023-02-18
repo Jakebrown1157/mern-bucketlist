@@ -9,15 +9,17 @@ import './styles.css';
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
 
 function App() {
- 
-  return (
-    <div>
+
+
+return(
+   <div>
+
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Intro />} ></Route>
-        <Route path='/Home' element={<Home />} ></Route>
+        <Route path='/Home' element={<Home/>} ></Route>
         <Route path='/Create' element={<Create />} ></Route>
-        <Route path='/Edit' element={<Edit />} ></Route>
+        <Route path='/Edit/:id' element={<Edit />} ></Route>
         <Route path='/Leaderboard' element={<Leaderboard />} ></Route>
       </Routes>
     </BrowserRouter>

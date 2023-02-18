@@ -5,7 +5,7 @@ module.exports = {
     await queryInterface.createTable('Buckets', {
       bucket_id: {
         allowNull: false,
-        autoIncrement: true,
+        autoincrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
@@ -21,7 +21,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      discription: {
+      description: {
         type: Sequelize.STRING,
         allowNull: false
       }
