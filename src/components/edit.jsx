@@ -70,7 +70,6 @@ export default function Edit() {
     <main>
         <div style={{ display: 'flex', padding: 20, justifyContent: 'center', color: 'white' }}>
              <h1>Edit Bucket Page</h1>
-
         </div>
         <div>
             <Navbar></Navbar>

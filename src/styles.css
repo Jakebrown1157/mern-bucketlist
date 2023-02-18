@@ -28,6 +28,18 @@ body {
     background: linear-gradient(var(--color-bg), var(--color-bg-variant));
 }
 
+#homeTableHeaderColor{
+    color: #904C93;
+    font-weight:bolder;
+    text-shadow: .5px .5px white
+}
+
+#homeTableBodyColor{
+    color: #9FD20B;
+    text-shadow: .5px .5px black
+}
+
+
 .nav {
     background: linear-gradient(to top left, var(--primary),var( --secondary));
     display: flex;

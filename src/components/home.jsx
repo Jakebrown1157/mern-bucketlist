@@ -57,10 +57,10 @@ function Home() {
               <Table striped bordered hover id="formStyle">
                   <thead>
                     <tr>
-                      <th>Bucket List Item</th>
-                      <th>Difficulty</th>
-                      <th>Author</th>
-                      <th>Description</th>
+                      <th id='homeTableHeaderColor'>Bucket List Item</th>
+                      <th id='homeTableHeaderColor'>Difficulty</th>
+                      <th id='homeTableHeaderColor'>Author</th>
+                      <th id='homeTableHeaderColor'>Description</th>
                     </tr>
                   </thead>
               {buckets.map(bucket => {
@@ -69,10 +69,10 @@ function Home() {
                   <tbody>
                     <tr key={bucket.bucket_id}> 
                         
-                        <td ><Link style={{textDecoration: "none", color: 'white'}} to={`/Edit/${bucket.bucket_id}`} > {bucket.name}</Link></td>
-                        <td>{bucket.difficulty} </td>
-                        <td>{bucket.author} </td>
-                        <td>{bucket.description}</td>
+                        <td ><Link id='homeTableBodyColor' style={{textDecoration: "none"}} to={`/Edit/${bucket.bucket_id}`} > {bucket.name}</Link></td>
+                        <td id='homeTableBodyColor'>{bucket.difficulty} </td>
+                        <td id='homeTableBodyColor'>{bucket.author} </td>
+                        <td id='homeTableBodyColor'>{bucket.description}</td>
                     </tr>
                   </tbody>
                   
