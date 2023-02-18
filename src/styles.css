@@ -26,7 +26,9 @@ body {
     margin: 0;
     height: 900px;
     background: linear-gradient(var(--color-bg), var(--color-bg-variant));
+
 }
+
 
 .nav {
     background: linear-gradient(to top left, var(--primary),var( --secondary));
@@ -140,8 +142,6 @@ h1 {
     
 }
 
-    box-shadow: .25em .25em 1em var(--white);
-}
 
 .intro_p {
     text-align: center;

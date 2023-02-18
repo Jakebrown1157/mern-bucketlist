@@ -6,6 +6,7 @@ import heybucket from '../assets/heybucket.png'
 function Intro() {
     return(
         <div >
+            <br></br>
             <nav>
                 <img className="img_i" src={heybucket} alt="Hey bucket logo" />
                
