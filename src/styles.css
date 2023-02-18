@@ -128,20 +128,20 @@ h1 {
 #formStyle {
     max-width: 90%;
     margin-left: 5%;
-    background-color: #2C3034;
+    /* background-color: #2C3034; */
     padding-right: 3%;
     padding-top: 20px;
 }
 
 #formStyleGroup {
     margin-left: 2%;
-    background-color: #2C3034;
+    /* background-color: #2C3034; */
     color:white
     
 }
 
-    box-shadow: .25em .25em 1em var(--white);
-}
+
+
 
 .intro_p {
     text-align: center;

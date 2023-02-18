@@ -54,7 +54,7 @@ function Home() {
      
           {buckets && (
             <div>
-              <Table striped bordered hover variant="dark" id="formStyle">
+              <Table striped bordered hover id="formStyle">
                   <thead>
                     <tr>
                       <th>Bucket List Item</th>
