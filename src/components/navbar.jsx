@@ -6,7 +6,7 @@ import dontkickbucket from '../assets/dontkickbucket.png'
 export default function Navbar() {
     return(
         
-        <nav className='nav' >
+        <nav className='nav'>
             <img className='img' src={heybucket} alt="Hey bucket logo"/>
             <div className='buttons'>
 

@@ -17,7 +17,7 @@
     --btn-cl-variant: #D2E504;
 
     --white: #FFFFFF;
-    --blue: #0504AA; 
+    --blue: #004AAD; 
 
     --size-divisor: 3;
 }
@@ -26,7 +26,7 @@ body {
     margin: 0;
     height: 900px;
     background: linear-gradient(var(--color-bg), var(--color-bg-variant));
-
+    background-repeat: no-repeat;
 }
 
 
@@ -111,7 +111,7 @@ h1 {
     height: calc(250px / var(--size-divisor));
     width: calc(250px / var(--size-divisor));
     border-radius: 25px;
-    box-shadow: .25em .25em 1em var(--white);
+    box-shadow: .10em .10em 1em var(--white);
     opacity: .8;
     object-fit: cover;
     object-position: bottom;
