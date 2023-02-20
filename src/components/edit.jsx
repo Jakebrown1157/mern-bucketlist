@@ -48,7 +48,7 @@ export default function Edit() {
             const { data, error} = await supabase
             .from('buckets')
             .select()
-            .eq('bucket_id', id)
+            .eq('id', id)
             .single()
 
             if (error) {
