@@ -2,7 +2,6 @@ import Navbar from './navbar.jsx'
 import supabase from '../config/supabaseClient'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import skull from '../assets/skull.png'
 import '../styles.css';
 import Table from 'react-bootstrap/Table';
 
@@ -54,7 +53,7 @@ function Home() {
      
           {buckets && (
             <div>
-              <Table striped bordered hover id="formStyle">
+              <Table bordered hover id="formStyle">
                   <thead>
                     <tr>
                       <th id='homeTableHeaderColor'>Bucket List Item</th>
@@ -70,9 +69,9 @@ function Home() {
                     <tr key={bucket.bucket_id}> 
                         
                         <td ><Link id='homeTableBodyColor' style={{textDecoration: "none"}} to={`/Edit/${bucket.bucket_id}`} > {bucket.name}</Link></td>
-                        <td id='homeTableBodyColor'>{bucket.difficulty} </td>
-                        <td id='homeTableBodyColor'>{bucket.author} </td>
-                        <td id='homeTableBodyColor'>{bucket.description}</td>
+                        <td>{bucket.difficulty} </td>
+                        <td>{bucket.author} </td>
+                        <td>{bucket.description}</td>
                     </tr>
                   </tbody>
                   
