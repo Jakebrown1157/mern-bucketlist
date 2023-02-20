@@ -1,8 +1,6 @@
 import Navbar from './navbar.jsx'
-// import supabase from '../config/supabaseClient'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-// import skull from '../assets/skull.png'
 import '../styles.css';
 import Table from 'react-bootstrap/Table';
 
@@ -10,7 +8,7 @@ import Table from 'react-bootstrap/Table';
 const React = require('react')
 
 function Home() {
-  // console.log(supabase)
+
 
   const [fetchError, setFetchError] = useState(null)
   const [buckets, setBuckets] = useState(null)
@@ -24,27 +22,7 @@ function Home() {
     }
     fetchData()
   }, [])
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const { data, error } = await supabase
-  //     .from('buckets')
-  //     .select()
 
-  //     if (error) {
-  //       setFetchError('Could not fetch the bucket list items')
-  //       setBuckets(null)
-  //       console.log(error)
-  //     }
-  //     if (data) {
-  //       setBuckets(data)
-  //       setFetchError(null)
-  //       console.log(data)
-  //     }
-  //   }
-    
-  //   fetchData()
-  // }, [])
-  
     return (
 
       <div style={{ height: '900px'}}>

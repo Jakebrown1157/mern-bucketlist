@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   Bucket.init({
     id: {
       allowNull: false,
-      autoincrement: true,
+      autoIncrement: true,
       primaryKey: true,
       type: DataTypes.INTEGER
     },

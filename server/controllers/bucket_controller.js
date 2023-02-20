@@ -13,12 +13,25 @@ buckets.get('/', async (req,res) => {
     }
 })
 
+// get a bucket by id
+buckets.get('/:id', async (req, res) => {
+    try {
+        const foundBucket = await Bucket.findOne({
+            where: { id: req.params.id },
+        })
+        res.status(200).json(foundBucket)
+    } catch (err) {
+        res.status(500).send("Server error")
+        console.log(err)
+    }
+})
+
+
 // CREATE NEW bucket
 buckets.post('/create', async (req, res) => {
     try {
         const newBucket = await Bucket.create(req.body)
         res.status(200).json({
-            // message: 'Bucket List Item created successfully',
             data: newBucket,
         })
     } 
