@@ -18,7 +18,7 @@ buckets.post('/create', async (req, res) => {
     try {
         const newBucket = await Bucket.create(req.body)
         res.status(200).json({
-            message: 'Bucket List Item created successfully',
+            // message: 'Bucket List Item created successfully',
             data: newBucket,
         })
     } 
