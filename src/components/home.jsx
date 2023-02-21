@@ -23,8 +23,8 @@ function Home() {
 
     return (
 
-      <div style={{ height: '900px'}}>
-        <div style={{ display: 'flex', padding: 20, justifyContent: 'center', color: 'white' }}>
+      <div>
+        <div>
             <h1> Hey, Whats Your Bucket List?</h1>
         </div>
         <Navbar></Navbar>
@@ -32,21 +32,22 @@ function Home() {
         <main>
           {buckets && (
             <div>
-              <Table striped bordered hover variant="dark" id="formStyle">
+              <Table bordered hover id="formStyle">
                   <thead>
                     <tr>
-                      <th>Bucket List Item</th>
-                      <th>Difficulty</th>
-                      <th>Author</th>
-                      <th>Description</th>
+                      <th id='homeTableHeaderColor'>Bucket List Item</th>
+                      <th id='homeTableHeaderColor'>Difficulty</th>
+                      <th id='homeTableHeaderColor'>Author</th>
+                      <th id='homeTableHeaderColor'>Description</th>
                     </tr>
                   </thead>
               {buckets.map((bucket, index) => {
                 return(
                   
+
                   <tbody key={index}>
                     <tr key={index}> 
-                        <td ><Link style={{textDecoration: "none", color: 'white'}} to={`/Edit/${bucket.id}`}> {bucket.name}</Link></td>
+                        <td ><Link id='homeTableBodyColor' style={{textDecoration: "none", color: 'white'}} to={`/Edit/${bucket.id}`}> {bucket.name}</Link></td>
                         <td>{bucket.difficulty} </td>
                         <td>{bucket.author} </td>
                         <td>{bucket.description}</td>

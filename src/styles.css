@@ -30,6 +30,34 @@ body {
 }
 
 
+#homeTableHeaderColor{
+    color: #904C93;
+    font-weight:bolder;
+    text-shadow: .5px .5px white
+}
+thead,
+tbody,
+tfoot,
+tr,
+th  {
+    color: #904C93;
+    font-weight:bolder;
+    text-shadow: .5px .5px white 
+}
+
+thead,
+tbody,
+tfoot,
+tr,
+td {
+    color: #9FD20B;
+    text-shadow: .5px .5px black
+}
+#homeTableBodyColor{
+    color: #9FD20B;
+    text-shadow: .5px .5px black
+}
+
 .nav {
     background: linear-gradient(to top left, var(--primary),var( --secondary));
     display: flex;
@@ -104,6 +132,19 @@ h1 {
     object-position: bottom;
 }
 
+
+.img_lead {
+    height:calc(50px / var(--size-divisor));
+    width: calc(50px / var(--size-divisor));
+    border-radius: 25px;
+    box-shadow: .25em .25em 1em var(--white);
+    opacity: .8;
+    object-fit: cover;
+    object-position: bottom;
+}
+.table_length_comment{
+    max-width: 500px;
+}
 .img_i{
     display: block;
     margin-left: auto;
@@ -130,18 +171,17 @@ h1 {
 #formStyle {
     max-width: 90%;
     margin-left: 5%;
-    background-color: #2C3034;
+    /* background-color: #2C3034; */
     padding-right: 3%;
     padding-top: 20px;
 }
 
 #formStyleGroup {
     margin-left: 2%;
-    background-color: #2C3034;
+    /* background-color: #2C3034; */
     color:white
     
 }
-
 
 .intro_p {
     text-align: center;
