@@ -6,11 +6,9 @@ import dontkickbucket from '../assets/dontkickbucket.png'
 export default function Navbar() {
     return(
         
-        <nav className='nav' >
+        <nav className='nav'>
             <img className='img' src={heybucket} alt="Hey bucket logo"/>
             <div className='buttons'>
-
-                 {/* temporary link */}
 
                 <Link to='/'>
                     <br />
@@ -27,9 +25,11 @@ export default function Navbar() {
                     <button id='homeTableHeaderColor' type="button" className="btn">Create</button>
                 </Link>
 
+
                 <Link to='/Leaderboard'>
                     <br />
                     <button id='homeTableHeaderColor' type="button" className="btn">Leaderboard</button>
+
                 </Link>
             </div>
             <img className='img' src={dontkickbucket} alt="Dont kick bucket" />

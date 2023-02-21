@@ -17,7 +17,7 @@
     --btn-cl-variant: #D2E504;
 
     --white: #FFFFFF;
-    --blue: #0504AA; 
+    --blue: #004AAD; 
 
     --size-divisor: 3;
 }
@@ -26,7 +26,9 @@ body {
     margin: 0;
     height: 900px;
     background: linear-gradient(var(--color-bg), var(--color-bg-variant));
+    background-repeat: no-repeat;
 }
+
 
 #homeTableHeaderColor{
     color: #904C93;
@@ -56,7 +58,6 @@ td {
     text-shadow: .5px .5px black
 }
 
-
 .nav {
     background: linear-gradient(to top left, var(--primary),var( --secondary));
     display: flex;
@@ -85,8 +86,8 @@ td {
     display: flex;
     margin-left: calc(40px / var(--size-divisor));
     margin-right: calc(40px / var(--size-divisor));
-    padding-left: calc(50px / var(--size-divisor));
-    padding-right: calc(50px / var(--size-divisor));
+    padding-left: calc(40px / var(--size-divisor));
+    padding-right: calc(60px / var(--size-divisor));
     background: linear-gradient(to top left, var(--primary),var( --secondary)) padding-box,
     linear-gradient(to right, var(--color-bg), var(--blue)) border-box;
     border-radius: 25px;
@@ -117,7 +118,7 @@ h1 {
     margin: 0px auto;
     display: block;
     color: '#FFFFF';
-    text-shadow: 2px 2px red;
+    text-shadow: 2px 2px #ff0000;
 
 }
 
@@ -151,7 +152,7 @@ h1 {
     height: calc(250px / var(--size-divisor));
     width: calc(250px / var(--size-divisor));
     border-radius: 25px;
-    box-shadow: .25em .25em 1em var(--white);
+    box-shadow: .10em .10em 1em var(--white);
     opacity: .8;
     object-fit: cover;
     object-position: bottom;
@@ -182,9 +183,6 @@ h1 {
     
 }
 
-
-
-
 .intro_p {
     text-align: center;
     width: 60vw;
@@ -194,14 +192,32 @@ h1 {
 
 .btn {
     background-image: linear-gradient(var(--btn-cl), var(--btn-cl-variant));
+    width: calc(80px / var(--size-divisor));
+    height: calc(40px/ var(--size-divisor));
     box-shadow: 0 4px 8px;
     object-fit: cover;
     object-position: bottom;
 }
 
-p {
-    text-shadow: 2px 2px red;
+#leaderboard{
+    margin-left: 40px;
+    object-fit: cover;
+    object-position: bottom;
 }
+
+p {
+    text-shadow: 2px 2px #ff0000;
+}
+
+.intro_b{
+  display: flex;
+  padding: 20;
+  justify-content: center;
+  width: 80vw;
+  margin: auto;
+  text-decoration: none;
+}
+
 
 @media (min-width: 576px) {
     :root{
