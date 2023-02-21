@@ -9,8 +9,6 @@ const React = require('react')
 
 function Home() {
 
-
-  const [fetchError, setFetchError] = useState(null)
   const [buckets, setBuckets] = useState(null)
   
 
@@ -32,7 +30,6 @@ function Home() {
         <Navbar></Navbar>
         <br></br>
         <main>
-          {fetchError && (<p>{fetchError}</p>)}
           {buckets && (
             <div>
               <Table striped bordered hover variant="dark" style={{maxWidth: "90%", marginLeft: "5%"}}>
@@ -47,9 +44,9 @@ function Home() {
               {buckets.map((bucket, index) => {
                 return(
                   
-                  <tbody>
+                  <tbody key={index}>
                     <tr key={index}> 
-                        <td ><Link style={{textDecoration: "none", color: 'white'}} to={`/Edit/${bucket.id}`} > {bucket.name}</Link></td>
+                        <td ><Link style={{textDecoration: "none", color: 'white'}} to={`/Edit/${bucket.id}`}> {bucket.name}</Link></td>
                         <td>{bucket.difficulty} </td>
                         <td>{bucket.author} </td>
                         <td>{bucket.description}</td>
