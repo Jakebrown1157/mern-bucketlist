@@ -1,48 +1,82 @@
 import Navbar from './navbar.jsx'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import '../styles.css';
 
 export default function Edit() {
     const [bucket,setBuckets] = useState('')
-    const [data, setData] = useState({
-        name: "",
-        difficulty: 0,
-        author: "",
-        description: ""
-    });
+//     const [data, setData] = useState({
+//         name: "",
+//         difficulty: 0,
+//         author: "",
+//         description: ""
+//     });
    
-    const navigate = useNavigate()
+//     const navigate = useNavigate()
 
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-        navigate('/Home')
+//     const handleSubmit = async (e) => {
+//         e.preventDefault()
+//         navigate('/Home')
         
-            try {
-                const response = await fetch(`http://localhost:4005/api/Edit/:id`, {
-                    method: "PUT",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(data)
-                });
-                return await response.json();
-            } catch (error) {
-                console.error(error);
-    }
+//             try {
+//                 const response = await fetch(`http://localhost:4005/api/Edit/:id`, {
+//                     method: "PUT",
+//                     headers: {
+//                         "Content-Type": "application/json"
+//                     },
+//                     body: JSON.stringify(data)
+//                 });
+//                 return await response.json();
+//             } catch (error) {
+//                 console.error(error);
+//     }
 
-   const handleChange = async () => {
-        setData({...data, [e.target.name]: e.target.value})
-   }
-   
+//    const handleChange = async () => {
+//         setData({...data, [e.target.name]: e.target.value})
+//    }
+const {id} = useParams()
+useEffect(() => {
    const fetchData = async () => {
-    const response = await fetch('http://localhost:4005/api:id')
+    const response = await fetch(`http://localhost:4005/api/` + id)
     const JSON = await response.json()
+    console.log(JSON)
     setBuckets(JSON)
+    setData(JSON)
   }
   fetchData()
+}, [])
+
+const [data, setData] = useState({
+    name: "",
+    difficulty: 0,
+    author: "",
+    description: ""
+});
+
+const navigate = useNavigate()
+
+const handleSubmit = async (e) => {
+    e.preventDefault()
+    navigate('/Home')
+        try {
+            const response = await fetch(`http://localhost:4005/api/${id}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
+            return await response.json();
+        } catch (error) {
+            console.error(error);
+        }
+}
+
+const handleChange = e => {
+    setData({...data, [e.target.name]: e.target.value})
+}
   return(
     <main>
         <div style={{ display: 'flex', padding: 20, justifyContent: 'center', color: 'white' }}>
@@ -50,11 +84,11 @@ export default function Edit() {
         </div>
             <div>
             <Navbar></Navbar>
-          
+           
             <Form onSubmit={handleSubmit} >
                 <Form.Group className="mb-3" controlId="activity">
                     <Form.Label>Bucket List Activity</Form.Label>
-                        <Form.Control type='text' name="name" onChange={handleChange} defaultValue={bucket.name}></Form.Control>
+                        <Form.Control type='text' name="name" onChange={handleChange} defaultValue={bucket.name} ></Form.Control>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="Difficulty">
@@ -69,7 +103,7 @@ export default function Edit() {
 
                 <Form.Group className="mb-3" controlId="description">
                     <Form.Label>Description</Form.Label>
-                        <Form.Control type='text' name="description" onChange={handleChange} defaultValue={bucket.description}></Form.Control>
+                        <Form.Control type='text' name="description" onChange={handleChange} defaultValue={bucket.description} ></Form.Control>
                 </Form.Group>
                 <Button variant="primary" type="submit">Create</Button>
             </Form>
@@ -77,4 +111,3 @@ export default function Edit() {
      </main>
     )
     }
-}

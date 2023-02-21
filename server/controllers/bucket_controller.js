@@ -44,7 +44,7 @@ buckets.post('/create', async (req, res) => {
 
 
 // UPDATE A bucket by id
-buckets.put('Edit/:id', async (req, res) => {
+buckets.put('/:id', async (req, res) => {
     try {
         const updatedBucket = await Bucket.update(req.body, {
             where: { id: req.params.id }
