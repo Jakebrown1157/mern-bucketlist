@@ -152,10 +152,11 @@ h1 {
 
 .btn {
     background-image: linear-gradient(var(--btn-cl), var(--btn-cl-variant));
+    width: calc(80px / var(--size-divisor));
+    height: calc(40px/ var(--size-divisor));
     box-shadow: 0 4px 8px;
     object-fit: cover;
     object-position: bottom;
-  
 }
 
 #leaderboard{
@@ -168,13 +169,15 @@ p {
     text-shadow: 2px 2px #ff0000;
 }
 
-.intro_p{
-  display: 'flex';
+.intro_b{
+  display: flex;
   padding: 20;
-  justify-content: 'center';
-  width: '80vw';
-  margin: 'auto';
+  justify-content: center;
+  width: 80vw;
+  margin: auto;
+  text-decoration: none;
 }
+
 
 @media (min-width: 576px) {
     :root{
