@@ -6,36 +6,7 @@ import { useState, useEffect } from 'react'
 import '../styles.css';
 
 export default function Edit() {
-    const [bucket,setBuckets] = useState('')
-//     const [data, setData] = useState({
-//         name: "",
-//         difficulty: 0,
-//         author: "",
-//         description: ""
-//     });
-   
-//     const navigate = useNavigate()
 
-//     const handleSubmit = async (e) => {
-//         e.preventDefault()
-//         navigate('/Home')
-        
-//             try {
-//                 const response = await fetch(`http://localhost:4005/api/Edit/:id`, {
-//                     method: "PUT",
-//                     headers: {
-//                         "Content-Type": "application/json"
-//                     },
-//                     body: JSON.stringify(data)
-//                 });
-//                 return await response.json();
-//             } catch (error) {
-//                 console.error(error);
-//     }
-
-//    const handleChange = async () => {
-//         setData({...data, [e.target.name]: e.target.value})
-//    }
 const {id} = useParams()
 useEffect(() => {
    const fetchData = async () => {
@@ -47,7 +18,7 @@ useEffect(() => {
   }
   fetchData()
 }, [])
-
+const [bucket,setBuckets] = useState('')
 const [data, setData] = useState({
     name: "",
     difficulty: 0,
@@ -73,6 +44,24 @@ const handleSubmit = async (e) => {
             console.error(error);
         }
 }
+
+const handleDelete = async (e) => {
+    e.preventDefault()
+    navigate('/Home')
+        try {
+            const response = await fetch(`http://localhost:4005/api/${id}`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
+            return await response.json();
+        } catch (error) {
+            console.error(error);
+        }
+}
+
 
 const handleChange = e => {
     setData({...data, [e.target.name]: e.target.value})
@@ -106,6 +95,7 @@ const handleChange = e => {
                         <Form.Control type='text' name="description" onChange={handleChange} defaultValue={bucket.description} ></Form.Control>
                 </Form.Group>
                 <Button variant="primary" type="submit">Create</Button>
+                <Button variant="primary" type="delete" onClick={handleDelete}>Delete</Button>
             </Form>
         </div>
      </main>

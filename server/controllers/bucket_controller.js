@@ -59,7 +59,7 @@ buckets.put('/:id', async (req, res) => {
 })
 
 // DELETE A BAND BY ID
-buckets.delete('Delete/:id', async (req, res) => {
+buckets.delete('/:id', async (req, res) => {
     try {
         const deletedBucket = await Bucket.destroy({
             where: { id: req.params.id }
