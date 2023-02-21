@@ -32,7 +32,7 @@ function Home() {
         <main>
           {buckets && (
             <div>
-              <Table striped bordered hover variant="dark" style={{maxWidth: "90%", marginLeft: "5%"}}>
+              <Table striped bordered hover variant="dark" id="formStyle">
                   <thead>
                     <tr>
                       <th>Bucket List Item</th>

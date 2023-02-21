@@ -42,27 +42,35 @@ export default function Create() {
                 <h1>Create Bucket Page</h1>
                 <Navbar></Navbar>
             </main>
+
             <Form onSubmit={handleSubmit} >
                 <Form.Group className="mb-3" controlId="activity">
                     <Form.Label>Bucket List Activity</Form.Label>
                         <Form.Control type='text' name="name" onChange={handleChange} placeholder="Activity"></Form.Control>
+
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="Difficulty">
+                <Form.Group id='formStyleGroup' className="mb-3" controlId="Difficulty">
                     <Form.Label>Difficulty</Form.Label>
+
                         <Form.Control type='number' name="difficulty" onChange={handleChange} placeholder="Difficulty" min={0} max={3}></Form.Control>
+
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="author">
+                <Form.Group id='formStyleGroup' className="mb-3" controlId="author">
                     <Form.Label>Author</Form.Label>
+
                         <Form.Control type='text' name="author" onChange={handleChange} placeholder="Author"></Form.Control>
+
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="description">
+                <Form.Group id='formStyleGroup' className="mb-3" controlId="description">
                     <Form.Label>Description</Form.Label>
+
                         <Form.Control type='text' name="description" onChange={handleChange} placeholder="description"></Form.Control>
                 </Form.Group>
                 <Button variant="primary" type="submit">Create</Button>
+
             </Form>
         </div>
     )
