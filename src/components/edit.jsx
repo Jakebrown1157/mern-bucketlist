@@ -1,72 +1,72 @@
 import Navbar from './navbar.jsx'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { useParams, useNavigate } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import supabase from '../config/supabaseClient'
+import { useNavigate, useParams } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import '../styles.css';
 
-
 export default function Edit() {
-    const[name, setName] = useState('')
-    const[difficulty, setDifficulty] = useState('')
-    const[author, setAuthor] = useState('')
-    const[description, setDescription] = useState('')
-    const[formError, setFormError] = useState('')
 
-    const { id } = useParams()
-    const navigate = useNavigate()
+const {id} = useParams()
+useEffect(() => {
+   const fetchData = async () => {
+    const response = await fetch(`http://localhost:4005/api/` + id)
+    const JSON = await response.json()
+    console.log(JSON)
+    setBuckets(JSON)
+    setData(JSON)
+  }
+  fetchData()
+}, [])
+const [bucket,setBuckets] = useState('')
+const [data, setData] = useState({
+    name: "",
+    difficulty: 0,
+    author: "",
+    description: ""
+});
 
-    const handleSubmit = async (e) => {
-        e.preventDefault()
+const navigate = useNavigate()
 
-        if(!name || !difficulty || !author || !description) {
-            setFormError('please fill out all the empty fields')
-            return
+const handleSubmit = async (e) => {
+    e.preventDefault()
+    navigate('/Home')
+        try {
+            const response = await fetch(`http://localhost:4005/api/${id}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
+            return await response.json();
+        } catch (error) {
+            console.error(error);
         }
+}
 
-        const { data, error } = await supabase 
-            .from('buckets')
-            .update({name, difficulty, author, description})
-            .eq('bucket_id', id)
-            .select()
-
-        if(error){
-            console.log(error)
-            setFormError('please fill out all the empty fields')
+const handleDelete = async (e) => {
+    e.preventDefault()
+    navigate('/Home')
+        try {
+            const response = await fetch(`http://localhost:4005/api/${id}`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
+            return await response.json();
+        } catch (error) {
+            console.error(error);
         }
+}
 
-        if(data){
-            console.log(data)
-            setFormError(null)
-            navigate('/home')
-        }
-    }
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const { data, error} = await supabase
-            .from('buckets')
-            .select()
-            .eq('bucket_id', id)
-            .single()
-
-            if (error) {
-                navigate('/Home', { replace: true })
-            }
-            if (data) {
-                setName(data.name)
-                setDifficulty(data.difficulty)
-                setAuthor(data.author)
-                setDescription(data.description)
-                console.log(data)
-            }
-        }
-        fetchData()
-
-    }, [id, navigate])
-
-    return(
+const handleChange = e => {
+    setData({...data, [e.target.name]: e.target.value})
+}
+  return(
     <main>
         <div style={{ display: 'flex', padding: 20, justifyContent: 'center', color: 'white' }}>
              <h1>Edit Bucket Page</h1>
@@ -74,34 +74,38 @@ export default function Edit() {
         </div>
         <div>
             <Navbar></Navbar>
-          
-            <Form id='formStyle' onSubmit={handleSubmit}style={{marginTop: '30px'}}>
-                <Form.Group id='formStyleGroup' className="mb-3" controlId="activity">
 
+       
+            <Form onSubmit={handleSubmit} >
+                <Form.Group className="mb-3" controlId="activity">
                     <Form.Label>Bucket List Activity</Form.Label>
-                        <Form.Control size="sm" type='text' value={name} onChange={(e) => setName(e.target.value)} placeholder="Activity"></Form.Control>
+                        <Form.Control type='text' name="name" onChange={handleChange} defaultValue={bucket.name} ></Form.Control>
+
                 </Form.Group>
 
                 <Form.Group id='formStyleGroup' className="mb-3" controlId="Difficulty">
                     <Form.Label>Difficulty</Form.Label>
-                        <Form.Control size="sm" type='number' value={difficulty} onChange={(e) => setDifficulty(e.target.value)} placeholder="Difficulty" min={0} max={3}></Form.Control>
+
+                        <Form.Control type='number' name="difficulty" onChange={handleChange} defaultValue={bucket.difficulty} min={0} max={3}></Form.Control>
+
                 </Form.Group>
 
                 <Form.Group id='formStyleGroup' className="mb-3" controlId="author">
                     <Form.Label>Author</Form.Label>
-                        <Form.Control size="sm" type='text' value={author} onChange={(e) => setAuthor(e.target.value)} placeholder="Author"></Form.Control>
+
+                        <Form.Control type='text' name="author" onChange={handleChange} defaultValue={bucket.author}></Form.Control>
                 </Form.Group>
 
                 <Form.Group id='formStyleGroup' className="mb-3" controlId="description">
                     <Form.Label>Description</Form.Label>
-                        <Form.Control size="sm" type='text' value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Description"></Form.Control>
-                </Form.Group>
 
-                <Button variant="primary" type="submit">Update Activity</Button>
-                {formError && <p className='error'>{formError}</p>}
+                        <Form.Control type='text' name="description" onChange={handleChange} defaultValue={bucket.description} ></Form.Control>
+                </Form.Group>
+                <Button variant="primary" type="submit">Create</Button>
+                <Button variant="primary" type="delete" onClick={handleDelete}>Delete</Button>
             </Form>
         </div>
      </main>
 
     )
-}
+    }
