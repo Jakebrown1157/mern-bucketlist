@@ -163,8 +163,17 @@ h1 {
     object-fit: cover;
     object-position: bottom;
 }
+
 p {
     text-shadow: 2px 2px #ff0000;
+}
+
+.intro_p{
+  display: 'flex';
+  padding: 20;
+  justify-content: 'center';
+  width: '80vw';
+  margin: 'auto';
 }
 
 @media (min-width: 576px) {
