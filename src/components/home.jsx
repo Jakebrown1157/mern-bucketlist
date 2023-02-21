@@ -37,8 +37,8 @@ function Home() {
   
     return (
 
-      <div style={{ height: '900px'}}>
-        <div style={{ display: 'flex', padding: 20, justifyContent: 'center', color: 'white' }}>
+      <div>
+        <div>
             <h1> Hey, Whats Your Bucket List?</h1>
         </div>
         <Navbar></Navbar>
