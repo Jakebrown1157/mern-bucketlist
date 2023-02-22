@@ -4,6 +4,8 @@ import Form from 'react-bootstrap/Form';
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import '../styles.css'
+const React = require('react')
+
 
 export default function Create() {
  

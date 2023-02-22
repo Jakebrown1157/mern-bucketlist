@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import '../styles.css';
 import Table from 'react-bootstrap/Table';
 
+const React = require('react')
 
 const React = require('react')
 

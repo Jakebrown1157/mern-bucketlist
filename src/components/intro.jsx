@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import '../styles.css'
 import heybucket from '../assets/heybucket.png'
 
+const React = require('react')
 
 function Intro() {
     return(

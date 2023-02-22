@@ -8,6 +8,8 @@ import Leaderboard from './components/leaderboard.jsx';
 import './styles.css';
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
 
+const React = require('react')
+
 function App() {
 
 

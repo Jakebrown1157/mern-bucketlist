@@ -3,6 +3,8 @@ import '../styles.css'
 import heybucket from '../assets/heybucket.png'
 import dontkickbucket from '../assets/dontkickbucket.png'
 
+const React = require('react')
+
 export default function Navbar() {
     return(
         

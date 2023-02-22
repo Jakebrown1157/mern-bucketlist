@@ -5,6 +5,8 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import '../styles.css';
 
+const React = require('react')
+
 export default function Edit() {
 
 const {id} = useParams()
