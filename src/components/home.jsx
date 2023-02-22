@@ -6,8 +6,6 @@ import Table from 'react-bootstrap/Table';
 
 const React = require('react')
 
-const React = require('react')
-
 function Home() {
 
   const [buckets, setBuckets] = useState(null)
