@@ -73,7 +73,8 @@ export default function Create() {
                         <Form.Control type='text' name="description" onChange={handleChange} placeholder="description"></Form.Control>
 
                 </Form.Group>
-                <Button variant="primary" type="submit">Create</Button>
+                <br/>
+                <Button style={{marginLeft: "10%"}} variant="primary" type="submit">Create</Button>
 
             </Form>
         </div>

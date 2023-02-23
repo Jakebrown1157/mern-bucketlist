@@ -75,10 +75,10 @@ const handleChange = e => {
         </div>
         <div>
             <Navbar></Navbar>
-
+<br/>
        
             <Form onSubmit={handleSubmit} >
-                <Form.Group className="mb-3" controlId="activity">
+                <Form.Group id='formStyleGroup' className="mb-3" controlId="activity">
                     <Form.Label>Bucket List Activity</Form.Label>
                         <Form.Control type='text' name="name" onChange={handleChange} defaultValue={bucket.name} ></Form.Control>
 
@@ -102,8 +102,9 @@ const handleChange = e => {
 
                         <Form.Control type='text' name="description" onChange={handleChange} defaultValue={bucket.description} ></Form.Control>
                 </Form.Group>
-                <Button variant="primary" type="submit">Create</Button>
-                <Button variant="primary" type="delete" onClick={handleDelete}>Delete</Button>
+                <br/>
+                <Button style={{marginLeft: "10%"}} variant="primary" type="submit">Update</Button>
+                <Button style={{marginLeft: "5%"}} variant="primary" type="delete" onClick={handleDelete}>Delete</Button>
             </Form>
         </div>
      </main>
