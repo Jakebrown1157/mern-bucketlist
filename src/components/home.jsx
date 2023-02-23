@@ -31,7 +31,7 @@ function Home() {
         <main>
           {buckets && (
             <div>
-              <Table striped bordered hover variant="dark" style={{maxWidth: "90%", marginLeft: "5%"}}>
+              <Table striped hover variant="dark" style={{maxWidth: "90%", marginLeft: "5%"}}>
                   <thead>
                     <tr>
                       <th>Bucket List Item</th>
@@ -45,10 +45,10 @@ function Home() {
                   
                   <tbody key={index}>
                     <tr key={index}> 
-                        <td ><Link style={{textDecoration: "none", color: 'white'}} to={`/Edit/${bucket.id}`}> {bucket.name}</Link></td>
-                        <td>{bucket.difficulty} </td>
-                        <td>{bucket.author} </td>
-                        <td>{bucket.description}</td>
+                        <td ><Link style={{textDecoration: "none", color: '#9FD20B'}} to={`/Edit/${bucket.id}`}> {bucket.name}</Link></td>
+                        <td style={{color: '#9FD20B'}} >{bucket.difficulty} </td>
+                        <td style={{color: '#9FD20B'}}>{bucket.author} </td>
+                        <td style={{color: '#9FD20B'}}>{bucket.description}</td>
                     </tr>
                   </tbody>
                   

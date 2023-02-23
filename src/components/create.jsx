@@ -45,9 +45,9 @@ export default function Create() {
                 <Navbar></Navbar>
             </main>
 
-
+<br/>
             <Form onSubmit={handleSubmit} >
-                <Form.Group className="mb-3" controlId="activity">
+                <Form.Group id='formStyleGroup' className="mb-3" controlId="activity">
                     <Form.Label>Bucket List Activity</Form.Label>
                         <Form.Control type='text' name="name" onChange={handleChange} placeholder="Activity"></Form.Control>
 

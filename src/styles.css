@@ -42,13 +42,8 @@ tr,
 th  {
     color: #904C93;
     font-weight:bolder;
-    text-shadow: .5px .5px white 
 }
 
-thead,
-tbody,
-tfoot,
-tr,
 td {
     color: #9FD20B;
     text-shadow: .5px .5px black
@@ -171,7 +166,6 @@ h1 {
 #formStyle {
     max-width: 90%;
     margin-left: 5%;
-    /* background-color: #2C3034; */
     padding-right: 3%;
     padding-top: 20px;
 }
