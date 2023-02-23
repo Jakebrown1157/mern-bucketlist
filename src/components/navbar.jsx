@@ -30,7 +30,7 @@ export default function Navbar() {
 
                 <Link to='/Leaderboard'>
                     <br />
-                    <button id='homeTableHeaderColor' type="button" className="btn">Leaderboard</button>
+                    <button id='homeTableHeaderColor' type="button" className="btn">Rank</button>
 
                 </Link>
             </div>

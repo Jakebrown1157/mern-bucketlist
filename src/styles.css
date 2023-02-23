@@ -24,7 +24,7 @@
 
 body {
     margin: 0;
-    height: 900px;
+    height: 1100px;
     background: linear-gradient(var(--color-bg), var(--color-bg-variant));
     background-repeat: no-repeat;
 }
@@ -194,9 +194,12 @@ h1 {
 }
 
 #leaderboard{
-    margin-left: 40px;
+    margin-left: 35%;
     object-fit: cover;
     object-position: bottom;
+    color: #904C93;
+    font-weight:bolder;
+    text-shadow: .5px .5px white
 }
 
 p {

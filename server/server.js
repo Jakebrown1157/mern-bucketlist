@@ -27,7 +27,7 @@ app.listen(4005, () => {
     console.log('Server is running on port 4005');
 })
 
-app.get('*', (req, res) =>{
+app.get('/', (req, res) =>{
     res.sendFile(path.join(__dirname, '../build/index.html'))
 })
 
