@@ -22,7 +22,7 @@ export default function Create() {
             e.preventDefault()
             navigate('/Home')
                 try {
-                    const response = await fetch('http://localhost:4005/api/create', {
+                    const response = await fetch('/api/create', {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"

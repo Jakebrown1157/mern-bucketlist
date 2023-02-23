@@ -13,7 +13,7 @@ function Home() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('http://localhost:4005/api')
+      const response = await fetch('/api')
       const JSON = await response.json()
       setBuckets(JSON)
     }

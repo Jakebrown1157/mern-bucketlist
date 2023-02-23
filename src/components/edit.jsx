@@ -51,7 +51,7 @@ const handleDelete = async (e) => {
     e.preventDefault()
     navigate('/Home')
         try {
-            const response = await fetch(`http://localhost:4005/api/${id}`, {
+            const response = await fetch(`/api/${id}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json"
