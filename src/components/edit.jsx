@@ -12,7 +12,7 @@ export default function Edit() {
 const {id} = useParams()
 useEffect(() => {
    const fetchData = async () => {
-    const response = await fetch(`api/` + id)
+    const response = await fetch(`/api/` + id)
     const JSON = await response.json()
     console.log(JSON)
     setBuckets(JSON)
@@ -34,7 +34,7 @@ const handleSubmit = async (e) => {
     e.preventDefault()
     navigate('/Home')
         try {
-            const response = await fetch(`api/${id}`, {
+            const response = await fetch(`/api/${id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
