@@ -6,13 +6,11 @@ const path = require('path');
 const cors = require('cors');
 const methodOverride = require('method-override')
 
-
 //config //middleware
 require('dotenv').config();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }))
-
 app.use(express.static(path.join(__dirname, '../build')))
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'))
@@ -20,7 +18,6 @@ app.use(methodOverride('_method'))
 //controllers
 const bucketController = require('./controllers/bucket_controller.js')
 app.use('/api', bucketController)
-
 
 //LISTEN
 app.listen(4005, () => {

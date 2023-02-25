@@ -4,15 +4,12 @@ import Intro from './components/intro.jsx';
 import Create from './components/create.jsx';
 import Edit from './components/edit.jsx';
 import Leaderboard from './components/leaderboard.jsx';
-
 import './styles.css';
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
 
 const React = require('react')
 
 function App() {
-
-
 return(
    <div>
     <BrowserRouter>

@@ -34,7 +34,7 @@ const handleSubmit = async (e) => {
     e.preventDefault()
     navigate('/Home')
         try {
-            const response = await fetch(`api/${id}`, {
+            const response = await fetch(`/api/${id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
