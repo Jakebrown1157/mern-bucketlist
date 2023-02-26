@@ -124,6 +124,7 @@ One major task we would have loved to implement would be an authentication servi
 
 We did not implement this due to time restrictions. 
 
+We also werent able to resize the text on the page to make it more Mobile Compliant 
 
 # Hear from the Authors
 

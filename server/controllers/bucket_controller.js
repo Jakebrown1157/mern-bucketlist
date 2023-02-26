@@ -26,7 +26,6 @@ buckets.get('/:id', async (req, res) => {
     }
 })
 
-
 // CREATE NEW bucket
 buckets.post('/create', async (req, res) => {
     try {
@@ -35,13 +34,11 @@ buckets.post('/create', async (req, res) => {
             data: newBucket,
         })
     } 
-    
     catch (err) {
         res.status(500).json("server error")
         console.log(err)
     }
 })
-
 
 // UPDATE A bucket by id
 buckets.put('/:id', async (req, res) => {
