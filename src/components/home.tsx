@@ -40,7 +40,7 @@ function Home() {
                       <th>Description</th>
                     </tr>
                   </thead>
-              {buckets.map((bucket, index) => {
+              {buckets.map((bucket:any, index:number) => {
                 return(
                   
                   <tbody key={index}>

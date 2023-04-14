@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import '../styles.css'
 import heybucket from '../assets/heybucket.png'
-
+// not sure what was up with the assets they all broke but the imports should be right
 const React = require('react')
 
 function Intro() {

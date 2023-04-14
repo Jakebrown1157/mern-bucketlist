@@ -76,7 +76,7 @@ const handleDelete = async (e: React.FormEvent<HTMLFormElement>) => {
 const handleChange = (event: event) => {
     setData({...data, [event.target.name]: event.target.value})
 }
-
+ // wasent sure how to go about adding onChange or bucket properties because theres no way to add them as properties in a form
   return(
     <main>
         <div style={{ display: 'flex', padding: 20, justifyContent: 'center', color: 'white' }}>
