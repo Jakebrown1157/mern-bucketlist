@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import '../styles.css'
+import {event, target} from '../interfaces/handleSubmit'
 const React = require('react')
 
 
@@ -16,7 +17,7 @@ export default function Create() {
         description: ""
     });
     const navigate = useNavigate()
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         navigate('/Home')
             try {
@@ -33,9 +34,10 @@ export default function Create() {
         }
     }
 
-    const handleChange = e => {
-        setData({...data, [e.target.name]: e.target.value})
+     const handleChange = (event: event ) => {
+        setData({...data, [event.target.name]: event.target.value})
     }
+    // wasent sure how to go about adding onChange typing 
     return (
         <div>
             <main>

@@ -1,11 +1,19 @@
-import Navbar from './navbar.jsx'
+import Navbar from './navbar.tsx'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useNavigate, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import '../styles.css';
+import {event, target} from '../interfaces/handleSubmit'
 
 const React = require('react')
+
+interface bucket {
+    name: string,
+    difficulty: number,
+    author: string,
+    description: string,
+}
 
 export default function Edit() {
 
@@ -30,7 +38,7 @@ const [data, setData] = useState({
 
 const navigate = useNavigate()
 
-const handleSubmit = async (e) => {
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     navigate('/Home')
         try {
@@ -47,7 +55,7 @@ const handleSubmit = async (e) => {
         }
 }
 
-const handleDelete = async (e) => {
+const handleDelete = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     navigate('/Home')
         try {
@@ -65,9 +73,10 @@ const handleDelete = async (e) => {
 }
 
 
-const handleChange = e => {
-    setData({...data, [e.target.name]: e.target.value})
+const handleChange = (event: event) => {
+    setData({...data, [event.target.name]: event.target.value})
 }
+
   return(
     <main>
         <div style={{ display: 'flex', padding: 20, justifyContent: 'center', color: 'white' }}>
@@ -75,9 +84,8 @@ const handleChange = e => {
         </div>
         <div>
             <Navbar></Navbar>
-<br/>
-       
-            <Form onSubmit={handleSubmit} >
+            <br/>
+            <Form onSubmit={handleSubmit}  >
                 <Form.Group id='formStyleGroup' className="mb-3" controlId="activity">
                     <Form.Label>Bucket List Activity</Form.Label>
                         <Form.Control type='text' name="name" onChange={handleChange} defaultValue={bucket.name} ></Form.Control>
@@ -104,7 +112,7 @@ const handleChange = e => {
                 </Form.Group>
                 <br/>
                 <Button style={{marginLeft: "10%"}} variant="primary" type="submit">Update</Button>
-                <Button style={{marginLeft: "5%"}} variant="primary" type="delete" onClick={handleDelete}>Delete</Button>
+                <Button style={{marginLeft: "5%"}} variant="primary" type="submit" onClick={handleDelete}>Delete</Button>
             </Form>
         </div>
      </main>

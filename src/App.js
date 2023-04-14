@@ -1,9 +1,9 @@
 
 import Home from './components/home';
-import Intro from './components/intro.jsx';
-import Create from './components/create.jsx';
-import Edit from './components/edit.jsx';
-import Leaderboard from './components/leaderboard.jsx';
+import Intro from './components/intro.js';
+import Create from './components/create.js';
+import Edit from './components/edit.js';
+import Leaderboard from './components/leaderboard.js';
 import './styles.css';
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
 
